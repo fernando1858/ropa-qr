@@ -42,11 +42,9 @@ p {
     overflow: hidden;
     color: var(--blanco);
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             rgba(6, 47, 81, 0.98),
-            rgba(0, 63, 112, 0.93)
-        );
+            rgba(0, 63, 112, 0.93));
 }
 
 .portada-institucional::after {
@@ -229,11 +227,9 @@ p {
     position: relative;
     overflow: hidden;
     color: var(--blanco);
-    background: linear-gradient(
-        135deg,
-        var(--azul-oscuro),
-        var(--azul-institucional)
-    );
+    background: linear-gradient(135deg,
+            var(--azul-oscuro),
+            var(--azul-institucional));
 }
 
 .encabezado::after {
@@ -476,11 +472,9 @@ p {
     overflow: hidden;
     color: white;
     background:
-        linear-gradient(
-            150deg,
+        linear-gradient(150deg,
             var(--azul-oscuro),
-            var(--azul-institucional)
-        );
+            var(--azul-institucional));
 }
 
 .encabezado-pasaporte::before {
@@ -600,9 +594,9 @@ p {
     }
 
     .logo-pasaporte {
-    width: 135px;
-    height: 135px;
-    padding: 8px;
+        width: 135px;
+        height: 135px;
+        padding: 8px;
     }
 
     .cabecera-pasaporte h1 {
@@ -615,5 +609,187 @@ p {
 
     .datos-pasaporte div {
         padding: 15px;
+    }
+}
+
+/* FICHA DE IDENTIDAD DE LA PRENDA */
+
+.ficha-identidad {
+    padding: 28px;
+    border-radius: 24px;
+    border-top: 6px solid var(--rojo-institucional);
+    background-color: var(--blanco);
+    box-shadow: var(--sombra);
+}
+
+.foto-prenda {
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 2px dashed #b7c8d6;
+    background:
+        linear-gradient(145deg,
+            var(--azul-claro),
+            #f8fbfd);
+    text-align: center;
+    color: var(--azul-institucional);
+}
+
+.foto-prenda p {
+    margin: 18px 0 0;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.estado-foto {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background-color: rgba(0, 63, 112, 0.08);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.contenido-ficha {
+    padding: 28px;
+    border-radius: 20px;
+    background-color: #f8fafc;
+}
+
+.encabezado-ficha {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.titulo-ficha {
+    margin-bottom: 5px;
+    color: var(--rojo-institucional);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.encabezado-ficha h2 {
+    margin-bottom: 0;
+    color: var(--azul-oscuro);
+    font-weight: 800;
+}
+
+.sello-sustentable {
+    max-width: 150px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    background-color: var(--verde-claro);
+    color: var(--verde-ambiental);
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.grid-ficha {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.dato-ficha {
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid #dfe7ed;
+    background-color: var(--blanco);
+}
+
+.dato-ficha span {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--gris-texto);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.dato-ficha strong {
+    color: var(--azul-oscuro);
+    font-size: 1rem;
+}
+
+.progreso-informacion {
+    margin-top: 24px;
+    padding-top: 22px;
+    border-top: 1px solid #dfe7ed;
+}
+
+.progreso-informacion span {
+    color: var(--gris-texto);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.progreso-informacion strong {
+    color: var(--azul-institucional);
+}
+
+.barra-progreso {
+    width: 100%;
+    height: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border-radius: 999px;
+    background-color: #dce5eb;
+}
+
+.avance-progreso {
+    width: 20%;
+    height: 100%;
+    border-radius: inherit;
+    background:
+        linear-gradient(90deg,
+            var(--azul-institucional),
+            var(--rojo-institucional));
+}
+
+.progreso-informacion p {
+    color: var(--gris-texto);
+    font-size: 0.88rem;
+}
+
+@media (max-width: 767px) {
+
+    .ficha-identidad {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .foto-prenda {
+        min-height: 260px;
+    }
+
+    .contenido-ficha {
+        padding: 20px;
+    }
+
+    .encabezado-ficha {
+        flex-direction: column;
+    }
+
+    .sello-sustentable {
+        max-width: none;
+    }
+
+    .grid-ficha {
+        grid-template-columns: 1fr;
     }
 }
