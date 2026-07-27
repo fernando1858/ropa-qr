@@ -1132,3 +1132,148 @@ p {
         gap: 4px;
     }
 }
+
+/* =========================================================
+   CORRECCIÓN ECOSCORE EN CELULAR
+   ========================================================= */
+
+.ecoscore-certificado {
+    display: block;
+    width: 100%;
+    padding: 32px;
+    border-radius: 24px;
+    border-top: 6px solid var(--verde-ambiental);
+    background-color: var(--blanco);
+    box-shadow: var(--sombra);
+}
+
+.encabezado-ecoscore {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.contenido-ecoscore {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.resultado-principal-ecoscore,
+.criterios-ecoscore {
+    padding: 24px;
+    border-radius: 20px;
+}
+
+.resultado-principal-ecoscore {
+    background-color: var(--verde-claro);
+    border: 1px solid #cfe5d7;
+}
+
+.criterios-ecoscore {
+    background-color: #f8fafc;
+    border: 1px solid #dfe7ed;
+}
+
+.lista-criterios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.lista-criterios span {
+    display: block;
+    padding: 11px 13px;
+    border-radius: 12px;
+    background-color: var(--blanco);
+}
+
+.escala-ecoscore {
+    margin-top: 28px;
+    padding-top: 26px;
+    border-top: 1px solid #dfe7ed;
+}
+
+.fila-ecoscore {
+    padding: 14px 16px;
+    display: grid;
+    grid-template-columns: 100px 105px 90px 1fr;
+    align-items: center;
+    gap: 12px;
+    border-left: 6px solid transparent;
+    border-radius: 14px;
+}
+
+/* CELULAR */
+
+@media (max-width: 767px) {
+
+    .ecoscore-certificado {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .encabezado-ecoscore {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .estado-evaluacion {
+        align-self: flex-start;
+    }
+
+    .contenido-ecoscore {
+        display: block;
+    }
+
+    .resultado-principal-ecoscore,
+    .criterios-ecoscore {
+        width: 100%;
+        padding: 18px;
+    }
+
+    .criterios-ecoscore {
+        margin-top: 18px;
+    }
+
+    .numero-ecoscore {
+        font-size: 2.2rem;
+    }
+
+    .estrellas-principales {
+        font-size: 1.45rem;
+        letter-spacing: 2px;
+    }
+
+    .lista-criterios {
+        grid-template-columns: 1fr;
+        gap: 9px;
+    }
+
+    .escala-ecoscore {
+        margin-top: 22px;
+        padding-top: 20px;
+    }
+
+    .fila-ecoscore {
+        display: block;
+        padding: 14px;
+    }
+
+    .fila-ecoscore span,
+    .fila-ecoscore strong,
+    .fila-ecoscore small {
+        display: block;
+    }
+
+    .fila-ecoscore .estrellas-ecoscore {
+        margin: 4px 0;
+    }
+
+    .fila-ecoscore small {
+        margin-top: 5px;
+        line-height: 1.4;
+    }
+}
