@@ -474,11 +474,9 @@ p {
     overflow: hidden;
     color: var(--blanco);
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             var(--azul-oscuro),
-            var(--azul-institucional)
-        );
+            var(--azul-institucional));
 }
 
 .encabezado-prenda::after {
@@ -688,5 +686,144 @@ p {
 
     .nombre-colegio {
         font-size: 0.74rem;
+    }
+}
+
+/* =========================================================
+   DATOS AMBIENTALES
+   ========================================================= */
+
+.seccion-datos-ambientales {
+    margin-top: 34px;
+}
+
+.encabezado-datos {
+    max-width: 700px;
+    margin-bottom: 28px;
+}
+
+.encabezado-datos h2 {
+    margin-bottom: 10px;
+    color: var(--azul-oscuro);
+    font-weight: 800;
+}
+
+.encabezado-datos p:last-child {
+    margin-bottom: 0;
+    color: var(--gris-texto);
+}
+
+.etiqueta-seccion {
+    margin-bottom: 7px;
+    color: var(--rojo-institucional);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.cabecera-tarjeta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.cabecera-tarjeta .icono {
+    margin: 0;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    font-size: 1.55rem;
+    background-color: var(--azul-claro);
+}
+
+.cabecera-tarjeta h3 {
+    margin: 0;
+}
+
+.valor-pendiente {
+    display: inline-block;
+    margin-bottom: 12px !important;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background-color: #edf1f4;
+    color: var(--gris-texto) !important;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.tarjeta-agua {
+    border-bottom-color: #3c8dbc;
+}
+
+.tarjeta-carbono {
+    border-bottom-color: var(--azul-oscuro);
+}
+
+.tarjeta-textil {
+    border-bottom-color: #7d8790;
+}
+
+.tarjeta-degradacion {
+    border-bottom-color: #b7791f;
+}
+
+.tarjeta-circularidad {
+    border-bottom-color: var(--verde-ambiental);
+}
+
+.tarjeta-durabilidad {
+    border-bottom-color: var(--rojo-institucional);
+}
+
+/* =========================================================
+   ECOSCORE
+   ========================================================= */
+
+.resultado-ecoscore {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+}
+
+.estado-ecoscore {
+    padding: 9px 16px;
+    border-radius: 999px;
+    background-color: var(--verde-claro);
+    color: var(--verde-ambiental);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.resultado-ecoscore strong {
+    color: var(--azul-oscuro);
+    font-size: 1.05rem;
+}
+
+@media (max-width: 767px) {
+
+    .seccion-datos-ambientales {
+        margin-top: 26px;
+    }
+
+    .encabezado-datos {
+        text-align: center;
+    }
+
+    .cabecera-tarjeta {
+        align-items: flex-start;
+    }
+
+    .resultado-ecoscore {
+        width: 100%;
+        align-items: flex-start;
     }
 }
