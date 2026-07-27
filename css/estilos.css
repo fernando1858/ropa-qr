@@ -465,331 +465,228 @@ p {
     }
 }
 
-/* ENCABEZADO PASAPORTE AMBIENTAL */
+/* =========================================================
+   ENCABEZADO SIMPLE DE LAS PÁGINAS DE PRENDAS
+   ========================================================= */
 
-.encabezado-pasaporte {
+.encabezado-prenda {
     position: relative;
     overflow: hidden;
-    color: white;
+    color: var(--blanco);
     background:
-        linear-gradient(150deg,
+        linear-gradient(
+            135deg,
             var(--azul-oscuro),
-            var(--azul-institucional));
+            var(--azul-institucional)
+        );
 }
 
-.encabezado-pasaporte::before {
+.encabezado-prenda::after {
     content: "";
     position: absolute;
-    top: -120px;
-    left: -100px;
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.05);
-}
-
-.encabezado-pasaporte::after {
-    content: "";
-    position: absolute;
-    right: -100px;
-    bottom: -150px;
-    width: 360px;
-    height: 360px;
+    right: -80px;
+    bottom: -120px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     background-color: rgba(223, 23, 43, 0.22);
 }
 
-.cabecera-pasaporte {
+.encabezado-prenda .container {
     position: relative;
-    z-index: 2;
-    max-width: 850px;
-    margin: 0 auto;
-    text-align: center;
+    z-index: 1;
 }
 
-.logo-pasaporte {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 22px;
+.encabezado-prenda-contenido {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo-prenda {
+    width: 125px;
+    height: 125px;
     object-fit: contain;
-
-    padding: 10px;
+    flex-shrink: 0;
+    padding: 8px;
     border-radius: 50%;
-    background-color: white;
-
+    background-color: var(--blanco);
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.22),
-        0 0 0 5px rgba(255, 255, 255, 0.16);
+        0 10px 28px rgba(0, 0, 0, 0.20),
+        0 0 0 4px rgba(255, 255, 255, 0.14);
 }
 
-.colegio-pasaporte {
-    margin-bottom: 8px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-}
-
-.nombre-proyecto {
-    margin-bottom: 8px;
-    color: #ffffff;
-    font-size: 1.05rem;
+.nombre-colegio {
+    margin-bottom: 6px;
+    font-size: 0.82rem;
     font-weight: 800;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.10em;
     text-transform: uppercase;
 }
 
-.cabecera-pasaporte h1 {
-    margin-bottom: 14px;
-    font-size: clamp(2.2rem, 7vw, 4.2rem);
+.encabezado-prenda h1 {
+    margin-bottom: 8px;
+    font-size: 2.4rem;
     font-weight: 800;
 }
 
-.frase-pasaporte {
-    margin-bottom: 22px;
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.88);
+.subtitulo-prenda {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.84);
 }
 
-.linea-roja {
-    width: 120px;
-    height: 5px;
-    margin: 0 auto 30px;
-    border-radius: 999px;
-    background-color: var(--rojo-institucional);
-}
+/* =========================================================
+   PRESENTACIÓN E IMAGEN DE LA PRENDA
+   ========================================================= */
 
-.datos-pasaporte {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-}
-
-.datos-pasaporte div {
-    padding: 18px;
-    border-radius: 16px;
-    background-color: rgba(255, 255, 255, 0.09);
-    backdrop-filter: blur(4px);
-}
-
-.datos-pasaporte span {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.72);
-}
-
-.datos-pasaporte strong {
-    font-size: 1rem;
-    color: white;
-}
-
-@media (max-width: 767px) {
-
-    .encabezado-pasaporte .container {
-        padding-left: 18px;
-        padding-right: 18px;
-    }
-
-    .logo-pasaporte {
-        width: 135px;
-        height: 135px;
-        padding: 8px;
-    }
-
-    .cabecera-pasaporte h1 {
-        font-size: 2rem;
-    }
-
-    .datos-pasaporte {
-        grid-template-columns: 1fr;
-    }
-
-    .datos-pasaporte div {
-        padding: 15px;
-    }
-}
-
-/* FICHA DE IDENTIDAD DE LA PRENDA */
-
-.ficha-identidad {
+.presentacion-prenda {
     padding: 28px;
-    border-radius: 24px;
-    border-top: 6px solid var(--rojo-institucional);
+    border-top: 5px solid var(--rojo-institucional);
+    border-radius: 22px;
     background-color: var(--blanco);
     box-shadow: var(--sombra);
 }
 
-.foto-prenda {
-    position: relative;
-    min-height: 100%;
-    height: 100%;
-    padding: 28px;
+.contenedor-imagen-prenda {
+    min-height: 280px;
+    padding: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border-radius: 20px;
     border: 2px dashed #b7c8d6;
-    background:
-        linear-gradient(145deg,
-            var(--azul-claro),
-            #f8fbfd);
-    text-align: center;
+    border-radius: 18px;
+    background-color: var(--azul-claro);
     color: var(--azul-institucional);
+    text-align: center;
 }
 
-.foto-prenda p {
+.contenedor-imagen-prenda img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: contain;
+    border-radius: 14px;
+}
+
+.contenedor-imagen-prenda span {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background-color: rgba(0, 63, 112, 0.09);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.contenedor-imagen-prenda p {
     margin: 18px 0 0;
     font-size: 1.2rem;
     font-weight: 800;
 }
 
-.estado-foto {
-    padding: 8px 14px;
-    border-radius: 999px;
-    background-color: rgba(0, 63, 112, 0.08);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+.descripcion-prenda {
+    padding: 12px;
 }
 
-.contenido-ficha {
-    padding: 28px;
-    border-radius: 20px;
-    background-color: #f8fafc;
-}
-
-.encabezado-ficha {
-    margin-bottom: 24px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.titulo-ficha {
-    margin-bottom: 5px;
+.etiqueta-prenda {
+    margin-bottom: 8px;
     color: var(--rojo-institucional);
     font-size: 0.78rem;
     font-weight: 800;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.10em;
     text-transform: uppercase;
 }
 
-.encabezado-ficha h2 {
-    margin-bottom: 0;
+.descripcion-prenda h2 {
     color: var(--azul-oscuro);
     font-weight: 800;
 }
 
-.sello-sustentable {
-    max-width: 150px;
-    padding: 10px 14px;
-    border-radius: 14px;
-    background-color: var(--verde-claro);
-    color: var(--verde-ambiental);
-    font-size: 0.76rem;
-    font-weight: 800;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.grid-ficha {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-}
-
-.dato-ficha {
-    padding: 16px;
-    border-radius: 14px;
-    border: 1px solid #dfe7ed;
-    background-color: var(--blanco);
-}
-
-.dato-ficha span {
-    display: block;
-    margin-bottom: 5px;
+.descripcion-prenda p {
     color: var(--gris-texto);
-    font-size: 0.76rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
 }
 
-.dato-ficha strong {
-    color: var(--azul-oscuro);
-    font-size: 1rem;
+/* =========================================================
+   INFORMACIÓN AMBIENTAL SOLICITADA
+   ========================================================= */
+
+.tarjeta-info {
+    transition:
+        transform 0.20s ease,
+        box-shadow 0.20s ease;
 }
 
-.progreso-informacion {
-    margin-top: 24px;
-    padding-top: 22px;
-    border-top: 1px solid #dfe7ed;
+.tarjeta-info:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px rgba(5, 43, 73, 0.12);
 }
 
-.progreso-informacion span {
-    color: var(--gris-texto);
-    font-size: 0.9rem;
-    font-weight: 700;
+.ecoscore {
+    border-left-color: var(--verde-ambiental);
 }
 
-.progreso-informacion strong {
-    color: var(--azul-institucional);
+.desafio {
+    border-left-color: var(--rojo-institucional);
 }
 
-.barra-progreso {
-    width: 100%;
-    height: 10px;
-    margin-bottom: 12px;
-    overflow: hidden;
-    border-radius: 999px;
-    background-color: #dce5eb;
-}
-
-.avance-progreso {
-    width: 20%;
-    height: 100%;
-    border-radius: inherit;
-    background:
-        linear-gradient(90deg,
-            var(--azul-institucional),
-            var(--rojo-institucional));
-}
-
-.progreso-informacion p {
-    color: var(--gris-texto);
-    font-size: 0.88rem;
-}
+/* =========================================================
+   RESPONSIVE PARA CELULARES
+   ========================================================= */
 
 @media (max-width: 767px) {
 
-    .ficha-identidad {
+    .encabezado-prenda .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .encabezado-prenda-contenido {
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+    }
+
+    .logo-prenda {
+        width: 112px;
+        height: 112px;
+        padding: 7px;
+    }
+
+    .encabezado-prenda h1 {
+        font-size: 1.9rem;
+    }
+
+    .subtitulo-prenda {
+        font-size: 0.95rem;
+    }
+
+    .presentacion-prenda {
         padding: 18px;
         border-radius: 18px;
     }
 
-    .foto-prenda {
-        min-height: 260px;
+    .contenedor-imagen-prenda {
+        min-height: 230px;
     }
 
-    .contenido-ficha {
-        padding: 20px;
+    .descripcion-prenda {
+        padding: 4px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .logo-prenda {
+        width: 102px;
+        height: 102px;
     }
 
-    .encabezado-ficha {
-        flex-direction: column;
+    .encabezado-prenda h1 {
+        font-size: 1.65rem;
     }
 
-    .sello-sustentable {
-        max-width: none;
-    }
-
-    .grid-ficha {
-        grid-template-columns: 1fr;
+    .nombre-colegio {
+        font-size: 0.74rem;
     }
 }
