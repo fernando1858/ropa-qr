@@ -1,11 +1,119 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f7f2;
-    color: #333;
+    background-color: #f3f6f2;
+    color: #243229;
+}
+
+.encabezado {
+    background: linear-gradient(135deg, #17663a, #2b8b57);
+    color: white;
+}
+
+.encabezado h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.card-prenda,
+.tarjeta-info,
+.ecoscore,
+.desafio {
+    background-color: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(22, 61, 37, 0.08);
+}
+
+.imagen-prenda {
+    min-height: 260px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    background-color: #e5eee7;
+    color: #4b6252;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px;
+}
+
+.card-prenda h2,
+.ecoscore h2,
+.desafio h2 {
+    font-weight: 700;
+}
+
+.tarjeta-info {
+    border: 1px solid #e3ebe5;
+}
+
+.tarjeta-info .icono {
+    font-size: 2rem;
+    margin-bottom: 14px;
+}
+
+.tarjeta-info h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.tarjeta-info p {
+    margin-bottom: 0;
+    line-height: 1.6;
+    color: #536158;
+}
+
+.ecoscore {
+    border-left: 8px solid #f0c419;
+}
+
+.puntaje {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 999px;
+    background-color: #f4f4f4;
+    font-weight: 700;
+}
+
+.desafio {
+    background-color: #eaf6ee;
+    border: 1px solid #cfe6d6;
+}
+
+.pie-pagina {
+    margin-top: 40px;
+    background-color: #153d27;
+    color: white;
+}
+
+p {
+    line-height: 1.6;
+}
+
+@media (max-width: 576px) {
+
+    .encabezado h1 {
+        font-size: 1.8rem;
+    }
+
+    .card-prenda,
+    .tarjeta-info,
+    .ecoscore,
+    .desafio {
+        padding: 22px;
+        border-radius: 16px;
+    }
+
+    .imagen-prenda {
+        min-height: 210px;
+    }
+
+    main.container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }
