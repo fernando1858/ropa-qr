@@ -1393,3 +1393,25 @@ p {
         padding: 18px;
     }
 }
+
+.boton-cerrar-ecoscore {
+    width: 100%;
+    margin-top: 22px;
+    padding: 13px 18px;
+    border: 1px solid #d8e2e9;
+    border-radius: 14px;
+    background-color: var(--blanco);
+    color: var(--azul-institucional);
+    font-weight: 800;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.boton-cerrar-ecoscore:hover {
+    border-color: var(--azul-institucional);
+    background-color: var(--azul-claro);
+    transform: translateY(-1px);
+}
