@@ -258,14 +258,14 @@ p {
 }
 
 .logo-colegio {
-    width: 95px;
-    height: 95px;
+    width: 115px;
+    height: 115px;
     object-fit: contain;
     flex-shrink: 0;
-    padding: 7px;
-    border-radius: 50%;
-    background-color: var(--blanco);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.20);
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
 }
 
 .card-prenda,
@@ -435,8 +435,8 @@ p {
     }
 
     .logo-colegio {
-        width: 72px;
-        height: 72px;
+        width: 90px;
+        height: 90px;
     }
 
     .imagen-prenda {
@@ -466,5 +466,145 @@ p {
     .contenido-footer {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+/* ENCABEZADO PASAPORTE AMBIENTAL */
+
+.encabezado-pasaporte {
+    position: relative;
+    overflow: hidden;
+    color: white;
+    background:
+        linear-gradient(
+            150deg,
+            var(--azul-oscuro),
+            var(--azul-institucional)
+        );
+}
+
+.encabezado-pasaporte::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    left: -100px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.encabezado-pasaporte::after {
+    content: "";
+    position: absolute;
+    right: -100px;
+    bottom: -150px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background-color: rgba(223, 23, 43, 0.22);
+}
+
+.cabecera-pasaporte {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.logo-pasaporte {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+
+.colegio-pasaporte {
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.nombre-proyecto {
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.cabecera-pasaporte h1 {
+    margin-bottom: 14px;
+    font-size: clamp(2.2rem, 7vw, 4.2rem);
+    font-weight: 800;
+}
+
+.frase-pasaporte {
+    margin-bottom: 22px;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.linea-roja {
+    width: 120px;
+    height: 5px;
+    margin: 0 auto 30px;
+    border-radius: 999px;
+    background-color: var(--rojo-institucional);
+}
+
+.datos-pasaporte {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.datos-pasaporte div {
+    padding: 18px;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(4px);
+}
+
+.datos-pasaporte span {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.datos-pasaporte strong {
+    font-size: 1rem;
+    color: white;
+}
+
+@media (max-width: 767px) {
+
+    .encabezado-pasaporte .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .logo-pasaporte {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cabecera-pasaporte h1 {
+        font-size: 2rem;
+    }
+
+    .datos-pasaporte {
+        grid-template-columns: 1fr;
+    }
+
+    .datos-pasaporte div {
+        padding: 15px;
     }
 }
