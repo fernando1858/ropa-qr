@@ -338,25 +338,21 @@
 
             </div>
 
-            <button class="boton-detalle-ecoscore" type="button" data-bs-toggle="collapse"
-                data-bs-target="#detalleEcoScore" aria-expanded="false" aria-controls="detalleEcoScore">
-                <span class="icono-detalle">
-                    ?
-                </span>
+            <button class="boton-detalle-ecoscore" type="button" id="botonDetalleEcoScore"
+                onclick="alternarDetalleEcoScore()">
+                <span class="icono-detalle">?</span>
 
                 <span class="texto-detalle">
-                    <strong>
+                    <strong id="tituloBotonEcoScore">
                         ¿Cómo se calcula este EcoScore?
                     </strong>
 
-                    <small>
+                    <small id="subtituloBotonEcoScore">
                         Conoce los criterios de evaluación y la escala utilizada.
                     </small>
                 </span>
 
-                <span class="flecha-detalle">
-                    ▼
-                </span>
+                <span class="flecha-detalle" id="flechaEcoScore">▼</span>
             </button>
 
             <div class="collapse" id="detalleEcoScore">
@@ -442,20 +438,41 @@
 
         </section>
 
-        <section class="desafio mt-4">
+        <section class="impacto-final mt-5">
 
-            <p class="etiqueta-seccion mb-2">
-                Desafío ambiental
+            <p class="impacto-etiqueta">
+                Tu impacto
             </p>
 
-            <h2>
-                Dale una vida más larga a tu prenda
+            <h2 class="impacto-titulo">
+                Reutiliza esta polera antes de comprar una nueva.
             </h2>
 
-            <p class="mb-0">
-                Aquí se incorporará un desafío relacionado con el ahorro de agua,
-                la reutilización o la reducción de residuos textiles.
-            </p>
+            <div class="impacto-dato">
+
+                <span class="impacto-icono">
+                    💧
+                </span>
+
+                <div>
+
+                    <p class="impacto-label">
+                        Ahorro aproximado
+                    </p>
+
+                    <h3 class="impacto-valor">
+                        2.700 litros de agua
+                    </h3>
+
+                </div>
+
+            </div>
+
+            <blockquote class="impacto-reflexion">
+
+                "La prenda más sostenible es aquella que se utiliza durante más tiempo."
+
+            </blockquote>
 
         </section>
 
@@ -478,20 +495,65 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
-        function cerrarDetalleEcoScore() {
+        function alternarDetalleEcoScore() {
             const detalle = document.getElementById("detalleEcoScore");
-            const resultado = document.getElementById("resultadoEcoScore");
+            const titulo = document.getElementById("tituloBotonEcoScore");
+            const subtitulo = document.getElementById("subtituloBotonEcoScore");
+            const flecha = document.getElementById("flechaEcoScore");
 
             if (!detalle) {
                 return;
             }
 
-            const desplegable = bootstrap.Collapse.getOrCreateInstance(detalle);
+            const desplegable = bootstrap.Collapse.getOrCreateInstance(detalle, {
+                toggle: false
+            });
+
+            const estaAbierto = detalle.classList.contains("show");
+
+            if (estaAbierto) {
+                desplegable.hide();
+
+                titulo.textContent = "¿Cómo se calcula este EcoScore?";
+                subtitulo.textContent =
+                    "Conoce los criterios de evaluación y la escala utilizada.";
+                flecha.textContent = "▼";
+            } else {
+                desplegable.show();
+
+                titulo.textContent = "Ocultar explicación";
+                subtitulo.textContent =
+                    "Toca nuevamente para cerrar esta información.";
+                flecha.textContent = "▲";
+            }
+        }
+
+        function cerrarDetalleEcoScore() {
+            const detalle = document.getElementById("detalleEcoScore");
+            const resultado = document.getElementById("resultadoEcoScore");
+            const titulo = document.getElementById("tituloBotonEcoScore");
+            const subtitulo = document.getElementById("subtituloBotonEcoScore");
+            const flecha = document.getElementById("flechaEcoScore");
+
+            if (!detalle) {
+                return;
+            }
+
+            const desplegable = bootstrap.Collapse.getOrCreateInstance(detalle, {
+                toggle: false
+            });
 
             detalle.addEventListener(
                 "hidden.bs.collapse",
                 function () {
+                    titulo.textContent = "¿Cómo se calcula este EcoScore?";
+                    subtitulo.textContent =
+                        "Conoce los criterios de evaluación y la escala utilizada.";
+                    flecha.textContent = "▼";
+
                     if (resultado) {
                         resultado.scrollIntoView({
                             behavior: "smooth",
