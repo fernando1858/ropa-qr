@@ -433,8 +433,7 @@
                         </div>
 
                     </section>
-                    <button class="boton-cerrar-ecoscore" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#detalleEcoScore" aria-controls="detalleEcoScore" onclick="volverAlEcoScore()">
+                    <button class="boton-cerrar-ecoscore" type="button" onclick="cerrarDetalleEcoScore()">
                         ▲ Volver al resultado
                     </button>
                 </div>
@@ -480,17 +479,30 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        function volverAlEcoScore() {
-            setTimeout(function () {
-                const ecoscore = document.getElementById("resultadoEcoScore");
+        function cerrarDetalleEcoScore() {
+            const detalle = document.getElementById("detalleEcoScore");
+            const resultado = document.getElementById("resultadoEcoScore");
 
-                if (ecoscore) {
-                    ecoscore.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-                }
-            }, 250);
+            if (!detalle) {
+                return;
+            }
+
+            const desplegable = bootstrap.Collapse.getOrCreateInstance(detalle);
+
+            detalle.addEventListener(
+                "hidden.bs.collapse",
+                function () {
+                    if (resultado) {
+                        resultado.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+                    }
+                },
+                { once: true }
+            );
+
+            desplegable.hide();
         }
     </script>
 
