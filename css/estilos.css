@@ -1,61 +1,66 @@
 :root {
-    --azul-institucional: #003f70;
-    --azul-oscuro: #062f51;
-    --azul-claro: #eaf2f8;
-    --rojo-institucional: #df172b;
-    --rojo-oscuro: #b50f20;
-    --verde-ambiental: #25834f;
-    --verde-claro: #eaf6ef;
-    --gris-fondo: #f4f6f8;
-    --gris-texto: #4c5963;
+    --verde-principal: #26734d;
+    --verde-oscuro: #174d36;
+    --verde-medio: #4f9b72;
+    --verde-claro: #e9f6ee;
+    --verde-suave: #f5faf7;
+    --acento: #8abf5a;
+    --gris-fondo: #f4f7f5;
+    --gris-superficie: #f8faf9;
+    --gris-borde: #dbe5df;
+    --gris-texto: #526159;
+    --texto-principal: #203129;
     --blanco: #ffffff;
-    --sombra: 0 14px 35px rgba(5, 43, 73, 0.10);
+    --sombra-suave: 0 8px 24px rgba(23, 77, 54, 0.07);
+    --sombra: 0 14px 35px rgba(23, 77, 54, 0.11);
+    --radio-medio: 18px;
+    --radio-grande: 24px;
 }
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto-principal);
     background-color: var(--gris-fondo);
-    color: #1f2f3a;
 }
 
-img {
-    max-width: 100%;
-}
-
-p {
-    line-height: 1.65;
-}
-
-/* PORTADA DEL INDEX */
+img { max-width: 100%; }
+p { line-height: 1.65; }
 
 .portada-institucional {
     position: relative;
     overflow: hidden;
     color: var(--blanco);
-    background:
-        linear-gradient(135deg,
-            rgba(6, 47, 81, 0.98),
-            rgba(0, 63, 112, 0.93));
+    background: linear-gradient(135deg, rgba(23, 77, 54, .98), rgba(38, 115, 77, .94));
+}
+
+.portada-institucional::before,
+.portada-institucional::after,
+.encabezado-prenda::before,
+.encabezado-prenda::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.portada-institucional::before {
+    top: -110px;
+    left: -95px;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, .05);
 }
 
 .portada-institucional::after {
-    content: "";
-    position: absolute;
     right: -90px;
     bottom: -120px;
     width: 320px;
     height: 320px;
-    border-radius: 50%;
-    background-color: rgba(223, 23, 43, 0.20);
+    background-color: rgba(138, 191, 90, .22);
 }
 
 .portada-contenido {
@@ -73,19 +78,19 @@ p {
 .logo-portada {
     width: 145px;
     height: 145px;
-    object-fit: contain;
     margin-bottom: 28px;
     padding: 8px;
+    object-fit: contain;
     border-radius: 50%;
     background-color: var(--blanco);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .20);
 }
 
 .sello-proyecto {
     margin-bottom: 12px;
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
+    font-size: .82rem;
+    font-weight: 800;
+    letter-spacing: .14em;
     text-transform: uppercase;
 }
 
@@ -106,16 +111,14 @@ p {
     height: 5px;
     margin-bottom: 22px;
     border-radius: 999px;
-    background-color: var(--rojo-institucional);
+    background-color: var(--acento);
 }
 
 .frase-portada {
-    max-width: 600px;
+    max-width: 620px;
     margin: 0;
     font-size: 1.15rem;
 }
-
-/* SECCIONES INDEX */
 
 .seccion-presentacion,
 .seccion-informacion,
@@ -124,15 +127,15 @@ p {
 }
 
 .seccion-presentacion {
-    margin-top: -65px;
     position: relative;
     z-index: 2;
+    margin-top: -65px;
 }
 
 .tarjeta-presentacion {
     padding: 40px;
-    border-radius: 24px;
-    border-top: 6px solid var(--rojo-institucional);
+    border-top: 6px solid var(--verde-medio);
+    border-radius: var(--radio-grande);
     background-color: var(--blanco);
     box-shadow: var(--sombra);
 }
@@ -140,22 +143,23 @@ p {
 .tarjeta-presentacion h2,
 .encabezado-seccion h2,
 .mensaje-qr h2 {
+    color: var(--verde-oscuro);
     font-weight: 800;
-    color: var(--azul-oscuro);
 }
 
 .etiqueta-institucional,
-.titulo-pequeno {
-    color: var(--rojo-institucional);
-    font-size: 0.82rem;
+.titulo-pequeno,
+.etiqueta-prenda,
+.etiqueta-seccion,
+.impacto-etiqueta {
+    color: var(--verde-principal);
+    font-size: .78rem;
     font-weight: 800;
-    letter-spacing: 0.1em;
+    letter-spacing: .1em;
     text-transform: uppercase;
 }
 
-.seccion-informacion {
-    padding-top: 25px;
-}
+.seccion-informacion { padding-top: 25px; }
 
 .encabezado-seccion {
     max-width: 700px;
@@ -165,17 +169,15 @@ p {
 
 .tarjeta-concepto {
     padding: 28px;
+    border: 1px solid var(--gris-borde);
     border-radius: 20px;
-    border: 1px solid #dfe7ed;
     background-color: var(--blanco);
-    box-shadow: 0 8px 25px rgba(5, 43, 73, 0.06);
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+    box-shadow: var(--sombra-suave);
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .tarjeta-concepto:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     box-shadow: var(--sombra);
 }
 
@@ -185,9 +187,9 @@ p {
 }
 
 .tarjeta-concepto h3 {
+    color: var(--verde-principal);
     font-size: 1.15rem;
     font-weight: 800;
-    color: var(--azul-institucional);
 }
 
 .tarjeta-concepto p {
@@ -195,123 +197,206 @@ p {
     color: var(--gris-texto);
 }
 
-.seccion-qr {
-    padding-top: 30px;
-}
+.seccion-qr { padding-top: 30px; }
 
 .mensaje-qr {
     padding: 36px;
     display: flex;
     align-items: center;
     gap: 28px;
-    border-radius: 24px;
-    border-left: 7px solid var(--rojo-institucional);
-    background-color: var(--azul-claro);
+    border-left: 7px solid var(--verde-medio);
+    border-radius: var(--radio-grande);
+    background-color: var(--verde-claro);
 }
 
 .icono-qr {
     flex-shrink: 0;
-    display: grid;
-    place-items: center;
     width: 82px;
     height: 82px;
+    display: grid;
+    place-items: center;
     border-radius: 20px;
-    background-color: var(--azul-institucional);
     color: var(--blanco);
+    background-color: var(--verde-principal);
     font-size: 2.8rem;
 }
 
-/* PÁGINAS DE PRENDAS */
-
-.encabezado {
+.encabezado-prenda {
     position: relative;
     overflow: hidden;
     color: var(--blanco);
-    background: linear-gradient(135deg,
-            var(--azul-oscuro),
-            var(--azul-institucional));
+    background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-principal));
 }
 
-.encabezado::after {
-    content: "";
-    position: absolute;
-    right: -70px;
-    bottom: -100px;
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    background-color: rgba(223, 23, 43, 0.25);
+.encabezado-prenda::before {
+    top: -90px;
+    left: -90px;
+    width: 250px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, .04);
 }
 
-.encabezado .container {
+.encabezado-prenda::after {
+    right: -80px;
+    bottom: -120px;
+    width: 280px;
+    height: 280px;
+    background-color: rgba(138, 191, 90, .24);
+}
+
+.encabezado-prenda .container {
     position: relative;
     z-index: 1;
 }
 
-.encabezado h1 {
-    font-size: 2.3rem;
+.encabezado-prenda-contenido {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo-prenda {
+    width: 125px;
+    height: 125px;
+    flex-shrink: 0;
+    padding: 8px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: var(--blanco);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .19), 0 0 0 4px rgba(255, 255, 255, .14);
+}
+
+.nombre-colegio {
+    margin-bottom: 6px;
+    font-size: .82rem;
+    font-weight: 800;
+    letter-spacing: .10em;
+    text-transform: uppercase;
+}
+
+.encabezado-prenda h1 {
+    margin-bottom: 8px;
+    font-size: 2.4rem;
     font-weight: 800;
 }
 
-.logo-colegio {
-    width: 115px;
-    height: 115px;
-    object-fit: contain;
-    flex-shrink: 0;
-    padding: 0;
-    border-radius: 0;
-    background-color: transparent;
-    box-shadow: none;
+.subtitulo-prenda {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, .86);
 }
 
-.card-prenda,
-.tarjeta-info,
-.ecoscore,
-.desafio {
+.presentacion-prenda {
     padding: 28px;
-    border-radius: 20px;
+    border-top: 5px solid var(--verde-medio);
+    border-radius: 22px;
     background-color: var(--blanco);
     box-shadow: var(--sombra);
 }
 
-.card-prenda {
-    border-top: 5px solid var(--rojo-institucional);
-}
-
-.imagen-prenda {
-    min-height: 260px;
-    padding: 20px;
-    display: grid;
-    place-items: center;
-    border-radius: 18px;
-    border: 2px dashed #b5c7d5;
-    background-color: var(--azul-claro);
-    color: var(--azul-institucional);
-    font-weight: 700;
+.contenedor-imagen-prenda {
+    min-height: 280px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px dashed #b9cec1;
+    border-radius: var(--radio-medio);
+    background-color: var(--verde-suave);
+    color: var(--verde-principal);
     text-align: center;
 }
 
-.card-prenda h2,
-.ecoscore h2,
-.desafio h2 {
-    color: var(--azul-oscuro);
+.contenedor-imagen-prenda img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: contain;
+    border-radius: 14px;
+}
+
+.contenedor-imagen-prenda span {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background-color: rgba(38, 115, 77, .09);
+    font-size: .78rem;
     font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
 }
 
-.tarjeta-info {
-    border: 1px solid #dfe7ed;
-    border-bottom: 4px solid var(--azul-institucional);
-}
-
-.tarjeta-info .icono {
-    margin-bottom: 14px;
-    font-size: 2rem;
-}
-
-.tarjeta-info h3 {
+.contenedor-imagen-prenda p {
+    margin: 18px 0 0;
     font-size: 1.2rem;
     font-weight: 800;
-    color: var(--azul-institucional);
+}
+
+.descripcion-prenda { padding: 12px; }
+.etiqueta-prenda { margin-bottom: 8px; }
+.etiqueta-seccion { margin-bottom: 7px; }
+
+.descripcion-prenda h2,
+.encabezado-datos h2,
+.encabezado-ecoscore h2 {
+    color: var(--verde-oscuro);
+    font-weight: 800;
+}
+
+.descripcion-prenda p,
+.encabezado-datos p:last-child,
+.encabezado-ecoscore p:last-child {
+    color: var(--gris-texto);
+}
+
+.seccion-datos-ambientales { margin-top: 34px; }
+
+.encabezado-datos {
+    max-width: 700px;
+    margin-bottom: 28px;
+}
+
+.encabezado-datos h2 { margin-bottom: 10px; }
+.encabezado-datos p:last-child { margin-bottom: 0; }
+
+.tarjeta-info {
+    padding: 28px;
+    height: 100%;
+    border: 1px solid var(--gris-borde);
+    border-bottom: 4px solid var(--verde-principal);
+    border-radius: 20px;
+    background-color: var(--blanco);
+    box-shadow: var(--sombra-suave);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.tarjeta-info:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra);
+}
+
+.cabecera-tarjeta {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.cabecera-tarjeta .icono {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background-color: var(--verde-claro);
+    font-size: 1.55rem;
+}
+
+.cabecera-tarjeta h3 {
+    margin: 0;
+    color: var(--verde-principal);
+    font-size: 1.2rem;
+    font-weight: 800;
 }
 
 .tarjeta-info p {
@@ -319,31 +404,312 @@ p {
     color: var(--gris-texto);
 }
 
-.ecoscore {
-    border-left: 8px solid var(--verde-ambiental);
+.valor-pendiente {
+    display: inline-block;
+    margin-bottom: 12px !important;
+    padding: 7px 12px;
+    border-radius: 999px;
+    color: var(--gris-texto) !important;
+    background-color: #edf2ef;
+    font-size: .78rem;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
-.puntaje {
-    display: inline-block;
-    padding: 14px 22px;
+.tarjeta-agua { border-bottom-color: #4b9cc6; }
+.tarjeta-carbono { border-bottom-color: #39705a; }
+.tarjeta-textil { border-bottom-color: #7c8c82; }
+.tarjeta-degradacion { border-bottom-color: #b9893f; }
+.tarjeta-circularidad { border-bottom-color: var(--verde-principal); }
+.tarjeta-durabilidad { border-bottom-color: var(--acento); }
+
+.ecoscore-certificado {
+    width: 100%;
+    padding: 32px;
+    border-top: 6px solid var(--verde-principal);
+    border-radius: var(--radio-grande);
+    background-color: var(--blanco);
+    box-shadow: var(--sombra);
+}
+
+.encabezado-ecoscore {
+    margin-bottom: 28px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.encabezado-ecoscore h2 { margin-bottom: 8px; }
+
+.estado-evaluacion {
+    flex-shrink: 0;
+    padding: 9px 15px;
     border-radius: 999px;
+    color: var(--gris-texto);
+    background-color: #edf2ef;
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.resultado-principal-ecoscore {
+    padding: 26px;
+    border: 1px solid #c9e2d3;
+    border-radius: 20px;
     background-color: var(--verde-claro);
-    color: var(--verde-ambiental);
+}
+
+.texto-puntaje {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--verde-principal);
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.numero-ecoscore {
+    display: block;
+    color: var(--verde-oscuro);
+    font-size: clamp(2.3rem, 6vw, 3.6rem);
     font-weight: 800;
 }
 
-.desafio {
-    border-left: 8px solid var(--rojo-institucional);
-    background-color: #fff1f3;
+.estrellas-principales {
+    margin: 6px 0;
+    color: #aebbb3;
+    font-size: 1.7rem;
+    letter-spacing: 4px;
 }
 
-/* FOOTER */
+.nombre-nivel {
+    margin-bottom: 8px;
+    color: var(--verde-principal);
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.descripcion-nivel {
+    margin-bottom: 0;
+    color: var(--gris-texto);
+}
+
+.boton-detalle-ecoscore {
+    width: 100%;
+    margin-top: 24px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid var(--gris-borde);
+    border-radius: 17px;
+    color: var(--verde-oscuro);
+    background-color: var(--gris-superficie);
+    text-align: left;
+    cursor: pointer;
+    transition: border-color .2s ease, background-color .2s ease, transform .2s ease;
+}
+
+.boton-detalle-ecoscore:hover {
+    border-color: var(--verde-principal);
+    background-color: var(--verde-claro);
+    transform: translateY(-1px);
+}
+
+.icono-detalle {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--blanco);
+    background-color: var(--verde-principal);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.texto-detalle {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.texto-detalle strong { font-size: 1rem; }
+
+.texto-detalle small {
+    color: var(--gris-texto);
+    line-height: 1.4;
+}
+
+.flecha-detalle {
+    flex-shrink: 0;
+    color: var(--verde-principal);
+    font-size: .9rem;
+    transition: transform .25s ease;
+}
+
+.detalle-ecoscore {
+    margin-top: 18px;
+    padding: 24px;
+    border: 1px solid var(--gris-borde);
+    border-radius: var(--radio-medio);
+    background-color: var(--gris-superficie);
+}
+
+.criterios-ecoscore {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+.criterios-ecoscore h3,
+.escala-ecoscore h3 {
+    margin-bottom: 18px;
+    color: var(--verde-oscuro);
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.criterios-ecoscore p { color: var(--gris-texto); }
+
+.lista-criterios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.lista-criterios span {
+    display: block;
+    padding: 11px 13px;
+    border-radius: 12px;
+    color: var(--gris-texto);
+    background-color: var(--blanco);
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+.escala-ecoscore {
+    margin-top: 26px;
+    padding-top: 26px;
+    border-top: 1px solid var(--gris-borde);
+}
+
+.tabla-ecoscore {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fila-ecoscore {
+    padding: 14px 16px;
+    display: grid;
+    grid-template-columns: 105px 110px 90px 1fr;
+    align-items: center;
+    gap: 12px;
+    border-left: 6px solid transparent;
+    border-radius: 14px;
+}
+
+.rango-ecoscore,
+.estrellas-ecoscore,
+.fila-ecoscore strong {
+    font-weight: 800;
+}
+
+.estrellas-ecoscore { letter-spacing: 2px; }
+.fila-ecoscore small { color: var(--gris-texto); }
+
+.nivel-platino { border-left-color: #8da2b5; background-color: #f1f5f8; }
+.nivel-verde { border-left-color: #2d9b5f; background-color: #edf8f1; }
+.nivel-amarillo { border-left-color: #e0b320; background-color: #fff9df; }
+.nivel-naranja { border-left-color: #e8892f; background-color: #fff2e6; }
+.nivel-rojo { border-left-color: #d83b3b; background-color: #fff0f0; }
+
+.boton-cerrar-ecoscore {
+    width: 100%;
+    margin-top: 22px;
+    padding: 13px 18px;
+    border: 1px solid var(--gris-borde);
+    border-radius: 14px;
+    color: var(--verde-principal);
+    background-color: var(--blanco);
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.boton-cerrar-ecoscore:hover {
+    border-color: var(--verde-principal);
+    background-color: var(--verde-claro);
+    transform: translateY(-1px);
+}
+
+.impacto-final {
+    max-width: 700px;
+    margin: 70px auto;
+    text-align: center;
+}
+
+.impacto-etiqueta {
+    margin-bottom: 18px;
+    letter-spacing: .15em;
+}
+
+.impacto-titulo {
+    max-width: 600px;
+    margin: 0 auto 45px;
+    color: var(--verde-oscuro);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.impacto-dato {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    border-top: 1px solid var(--gris-borde);
+    border-bottom: 1px solid var(--gris-borde);
+}
+
+.impacto-icono { font-size: 2.5rem; }
+
+.impacto-label {
+    margin-bottom: 6px;
+    color: var(--gris-texto);
+    font-size: .9rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.impacto-valor {
+    margin: 0;
+    color: var(--verde-principal);
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 800;
+}
+
+.impacto-reflexion {
+    max-width: 560px;
+    margin: 45px auto 0;
+    color: var(--gris-texto);
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.8;
+}
 
 .pie-pagina {
     margin-top: 50px;
     padding: 36px 0;
     color: var(--blanco);
-    background-color: var(--azul-oscuro);
+    background-color: var(--verde-oscuro);
 }
 
 .contenido-footer {
@@ -371,32 +737,23 @@ p {
 .linea-footer {
     height: 1px;
     margin: 28px 0 20px;
-    background-color: rgba(255, 255, 255, 0.20);
+    background-color: rgba(255, 255, 255, .20);
 }
 
 .mensaje-footer {
     margin-bottom: 0;
-    color: rgba(255, 255, 255, 0.78);
+    color: rgba(255, 255, 255, .78);
     text-align: center;
 }
 
-/* RESPONSIVE */
-
 @media (max-width: 767px) {
-
     .portada-contenido {
         min-height: 520px;
         padding: 55px 16px 85px;
     }
 
-    .logo-portada {
-        width: 120px;
-        height: 120px;
-    }
-
-    .seccion-presentacion {
-        margin-top: -55px;
-    }
+    .logo-portada { width: 120px; height: 120px; }
+    .seccion-presentacion { margin-top: -55px; }
 
     .seccion-presentacion,
     .seccion-informacion,
@@ -408,10 +765,9 @@ p {
     .tarjeta-presentacion,
     .tarjeta-concepto,
     .mensaje-qr,
-    .card-prenda,
+    .presentacion-prenda,
     .tarjeta-info,
-    .ecoscore,
-    .desafio {
+    .ecoscore-certificado {
         padding: 22px;
         border-radius: 17px;
     }
@@ -421,217 +777,12 @@ p {
         flex-direction: column;
     }
 
-    .icono-qr {
-        width: 68px;
-        height: 68px;
-    }
-
-    .encabezado h1 {
-        font-size: 1.8rem;
-    }
-
-    .logo-colegio {
-        width: 90px;
-        height: 90px;
-    }
-
-    .imagen-prenda {
-        min-height: 210px;
-    }
+    .icono-qr { width: 68px; height: 68px; }
 
     main.container {
         padding-left: 16px;
         padding-right: 16px;
     }
-}
-
-@media (max-width: 480px) {
-
-    .encabezado .d-flex {
-        align-items: flex-start !important;
-    }
-
-    .encabezado h1 {
-        font-size: 1.55rem;
-    }
-
-    .encabezado p {
-        font-size: 0.9rem;
-    }
-
-    .contenido-footer {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-/* =========================================================
-   ENCABEZADO SIMPLE DE LAS PÁGINAS DE PRENDAS
-   ========================================================= */
-
-.encabezado-prenda {
-    position: relative;
-    overflow: hidden;
-    color: var(--blanco);
-    background:
-        linear-gradient(135deg,
-            var(--azul-oscuro),
-            var(--azul-institucional));
-}
-
-.encabezado-prenda::after {
-    content: "";
-    position: absolute;
-    right: -80px;
-    bottom: -120px;
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    background-color: rgba(223, 23, 43, 0.22);
-}
-
-.encabezado-prenda .container {
-    position: relative;
-    z-index: 1;
-}
-
-.encabezado-prenda-contenido {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-.logo-prenda {
-    width: 125px;
-    height: 125px;
-    object-fit: contain;
-    flex-shrink: 0;
-    padding: 8px;
-    border-radius: 50%;
-    background-color: var(--blanco);
-    box-shadow:
-        0 10px 28px rgba(0, 0, 0, 0.20),
-        0 0 0 4px rgba(255, 255, 255, 0.14);
-}
-
-.nombre-colegio {
-    margin-bottom: 6px;
-    font-size: 0.82rem;
-    font-weight: 800;
-    letter-spacing: 0.10em;
-    text-transform: uppercase;
-}
-
-.encabezado-prenda h1 {
-    margin-bottom: 8px;
-    font-size: 2.4rem;
-    font-weight: 800;
-}
-
-.subtitulo-prenda {
-    margin-bottom: 0;
-    color: rgba(255, 255, 255, 0.84);
-}
-
-/* =========================================================
-   PRESENTACIÓN E IMAGEN DE LA PRENDA
-   ========================================================= */
-
-.presentacion-prenda {
-    padding: 28px;
-    border-top: 5px solid var(--rojo-institucional);
-    border-radius: 22px;
-    background-color: var(--blanco);
-    box-shadow: var(--sombra);
-}
-
-.contenedor-imagen-prenda {
-    min-height: 280px;
-    padding: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border: 2px dashed #b7c8d6;
-    border-radius: 18px;
-    background-color: var(--azul-claro);
-    color: var(--azul-institucional);
-    text-align: center;
-}
-
-.contenedor-imagen-prenda img {
-    width: 100%;
-    max-height: 360px;
-    object-fit: contain;
-    border-radius: 14px;
-}
-
-.contenedor-imagen-prenda span {
-    padding: 8px 14px;
-    border-radius: 999px;
-    background-color: rgba(0, 63, 112, 0.09);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-}
-
-.contenedor-imagen-prenda p {
-    margin: 18px 0 0;
-    font-size: 1.2rem;
-    font-weight: 800;
-}
-
-.descripcion-prenda {
-    padding: 12px;
-}
-
-.etiqueta-prenda {
-    margin-bottom: 8px;
-    color: var(--rojo-institucional);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.10em;
-    text-transform: uppercase;
-}
-
-.descripcion-prenda h2 {
-    color: var(--azul-oscuro);
-    font-weight: 800;
-}
-
-.descripcion-prenda p {
-    color: var(--gris-texto);
-}
-
-/* =========================================================
-   INFORMACIÓN AMBIENTAL SOLICITADA
-   ========================================================= */
-
-.tarjeta-info {
-    transition:
-        transform 0.20s ease,
-        box-shadow 0.20s ease;
-}
-
-.tarjeta-info:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 32px rgba(5, 43, 73, 0.12);
-}
-
-.ecoscore {
-    border-left-color: var(--verde-ambiental);
-}
-
-.desafio {
-    border-left-color: var(--rojo-institucional);
-}
-
-/* =========================================================
-   RESPONSIVE PARA CELULARES
-   ========================================================= */
-
-@media (max-width: 767px) {
 
     .encabezado-prenda .container {
         padding-left: 18px;
@@ -650,602 +801,48 @@ p {
         padding: 7px;
     }
 
-    .encabezado-prenda h1 {
-        font-size: 1.9rem;
-    }
-
-    .subtitulo-prenda {
-        font-size: 0.95rem;
-    }
-
-    .presentacion-prenda {
-        padding: 18px;
-        border-radius: 18px;
-    }
-
-    .contenedor-imagen-prenda {
-        min-height: 230px;
-    }
+    .encabezado-prenda h1 { font-size: 1.9rem; }
+    .subtitulo-prenda { font-size: .95rem; }
+    .presentacion-prenda { padding: 18px; }
+    .contenedor-imagen-prenda { min-height: 230px; }
 
     .descripcion-prenda {
         padding: 4px;
         text-align: center;
     }
-}
 
-@media (max-width: 480px) {
-
-    .logo-prenda {
-        width: 102px;
-        height: 102px;
-    }
-
-    .encabezado-prenda h1 {
-        font-size: 1.65rem;
-    }
-
-    .nombre-colegio {
-        font-size: 0.74rem;
-    }
-}
-
-/* =========================================================
-   DATOS AMBIENTALES
-   ========================================================= */
-
-.seccion-datos-ambientales {
-    margin-top: 34px;
-}
-
-.encabezado-datos {
-    max-width: 700px;
-    margin-bottom: 28px;
-}
-
-.encabezado-datos h2 {
-    margin-bottom: 10px;
-    color: var(--azul-oscuro);
-    font-weight: 800;
-}
-
-.encabezado-datos p:last-child {
-    margin-bottom: 0;
-    color: var(--gris-texto);
-}
-
-.etiqueta-seccion {
-    margin-bottom: 7px;
-    color: var(--rojo-institucional);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-.cabecera-tarjeta {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 16px;
-}
-
-.cabecera-tarjeta .icono {
-    margin: 0;
-    flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-    display: grid;
-    place-items: center;
-    border-radius: 14px;
-    font-size: 1.55rem;
-    background-color: var(--azul-claro);
-}
-
-.cabecera-tarjeta h3 {
-    margin: 0;
-}
-
-.valor-pendiente {
-    display: inline-block;
-    margin-bottom: 12px !important;
-    padding: 7px 12px;
-    border-radius: 999px;
-    background-color: #edf1f4;
-    color: var(--gris-texto) !important;
-    font-size: 0.78rem;
-    font-weight: 800;
-    text-transform: uppercase;
-}
-
-.tarjeta-agua {
-    border-bottom-color: #3c8dbc;
-}
-
-.tarjeta-carbono {
-    border-bottom-color: var(--azul-oscuro);
-}
-
-.tarjeta-textil {
-    border-bottom-color: #7d8790;
-}
-
-.tarjeta-degradacion {
-    border-bottom-color: #b7791f;
-}
-
-.tarjeta-circularidad {
-    border-bottom-color: var(--verde-ambiental);
-}
-
-.tarjeta-durabilidad {
-    border-bottom-color: var(--rojo-institucional);
-}
-
-/* =========================================================
-   ECOSCORE
-   ========================================================= */
-
-.resultado-ecoscore {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 7px;
-}
-
-.estado-ecoscore {
-    padding: 9px 16px;
-    border-radius: 999px;
-    background-color: var(--verde-claro);
-    color: var(--verde-ambiental);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-.resultado-ecoscore strong {
-    color: var(--azul-oscuro);
-    font-size: 1.05rem;
-}
-
-@media (max-width: 767px) {
-
-    .seccion-datos-ambientales {
-        margin-top: 26px;
-    }
-
-    .encabezado-datos {
-        text-align: center;
-    }
-
-    .cabecera-tarjeta {
-        align-items: flex-start;
-    }
-
-    .resultado-ecoscore {
-        width: 100%;
-        align-items: flex-start;
-    }
-}
-
-/* =========================================================
-   TABLA ECOSCORE
-   ========================================================= */
-
-.puntaje-ecoscore {
-    display: block;
-    margin-top: 14px;
-    color: var(--azul-oscuro);
-    font-size: 2rem;
-    font-weight: 800;
-}
-
-.nivel-ecoscore {
-    color: var(--gris-texto);
-    font-weight: 700;
-}
-
-.tabla-ecoscore {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.fila-ecoscore {
-    padding: 14px 16px;
-    display: grid;
-    grid-template-columns: 100px 1fr 100px;
-    align-items: center;
-    gap: 14px;
-    border-radius: 14px;
-    border-left: 6px solid transparent;
-    background-color: var(--blanco);
-    box-shadow: 0 5px 16px rgba(5, 43, 73, 0.07);
-}
-
-.rango-ecoscore {
-    color: var(--gris-texto);
-    font-size: 0.88rem;
-    font-weight: 800;
-}
-
-.estrellas-ecoscore {
-    letter-spacing: 2px;
-}
-
-.fila-ecoscore strong {
-    text-align: right;
-}
-
-.nivel-platino {
-    border-left-color: #8da2b5;
-    background-color: #f1f5f8;
-}
-
-.nivel-verde {
-    border-left-color: #2d9b5f;
-    background-color: #edf8f1;
-}
-
-.nivel-amarillo {
-    border-left-color: #e0b320;
-    background-color: #fff9df;
-}
-
-.nivel-naranja {
-    border-left-color: #e8892f;
-    background-color: #fff2e6;
-}
-
-.nivel-rojo {
-    border-left-color: #d83b3b;
-    background-color: #fff0f0;
-}
-
-@media (max-width: 767px) {
-
-    .fila-ecoscore {
-        grid-template-columns: 1fr;
-        gap: 6px;
-        text-align: left;
-    }
-
-    .fila-ecoscore strong {
-        text-align: left;
-    }
-
-    .puntaje-ecoscore {
-        font-size: 1.7rem;
-    }
-}
-
-/* =========================================================
-   ECOSCORE PRINCIPAL
-   ========================================================= */
-
-.ecoscore-certificado {
-    padding: 32px;
-    border-radius: 24px;
-    border-top: 6px solid var(--verde-ambiental);
-    background-color: var(--blanco);
-    box-shadow: var(--sombra);
-}
-
-.encabezado-ecoscore {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 24px;
-    margin-bottom: 28px;
-}
-
-.encabezado-ecoscore h2 {
-    margin-bottom: 8px;
-    color: var(--azul-oscuro);
-    font-weight: 800;
-}
-
-.encabezado-ecoscore p:last-child {
-    color: var(--gris-texto);
-}
-
-.estado-evaluacion {
-    flex-shrink: 0;
-    padding: 9px 15px;
-    border-radius: 999px;
-    background-color: #edf1f4;
-    color: var(--gris-texto);
-    font-size: 0.76rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-.contenido-ecoscore {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 24px;
-}
-
-.resultado-principal-ecoscore,
-.criterios-ecoscore {
-    padding: 26px;
-    border-radius: 20px;
-}
-
-.resultado-principal-ecoscore {
-    border: 1px solid #cfe5d7;
-    background-color: var(--verde-claro);
-}
-
-.texto-puntaje {
-    display: block;
-    margin-bottom: 4px;
-    color: var(--verde-ambiental);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.numero-ecoscore {
-    display: block;
-    color: var(--azul-oscuro);
-    font-size: clamp(2.3rem, 6vw, 3.6rem);
-    font-weight: 800;
-}
-
-.estrellas-principales {
-    margin: 6px 0;
-    color: #b4bdc4;
-    font-size: 1.7rem;
-    letter-spacing: 4px;
-}
-
-.nombre-nivel {
-    margin-bottom: 8px;
-    color: var(--verde-ambiental);
-    font-size: 1.15rem;
-    font-weight: 800;
-}
-
-.descripcion-nivel {
-    margin-bottom: 0;
-    color: var(--gris-texto);
-}
-
-.criterios-ecoscore {
-    border: 1px solid #dfe7ed;
-    background-color: #f8fafc;
-}
-
-.criterios-ecoscore h3,
-.escala-ecoscore h3 {
-    margin-bottom: 18px;
-    color: var(--azul-oscuro);
-    font-size: 1.15rem;
-    font-weight: 800;
-}
-
-.lista-criterios {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-}
-
-.lista-criterios span {
-    padding: 11px 13px;
-    border-radius: 12px;
-    background-color: var(--blanco);
-    color: var(--gris-texto);
-    font-size: 0.9rem;
-    font-weight: 700;
-}
-
-.escala-ecoscore {
-    margin-top: 28px;
-    padding-top: 26px;
-    border-top: 1px solid #dfe7ed;
-}
-
-.tabla-ecoscore {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.fila-ecoscore {
-    padding: 13px 15px;
-    display: grid;
-    grid-template-columns: 105px 110px 90px 1fr;
-    align-items: center;
-    gap: 12px;
-    border-left: 6px solid transparent;
-    border-radius: 13px;
-}
-
-.fila-ecoscore small {
-    color: var(--gris-texto);
-}
-
-.rango-ecoscore,
-.estrellas-ecoscore,
-.fila-ecoscore strong {
-    font-weight: 800;
-}
-
-.estrellas-ecoscore {
-    letter-spacing: 2px;
-}
-
-.nivel-platino {
-    border-left-color: #8da2b5;
-    background-color: #f1f5f8;
-}
-
-.nivel-verde {
-    border-left-color: #2d9b5f;
-    background-color: #edf8f1;
-}
-
-.nivel-amarillo {
-    border-left-color: #e0b320;
-    background-color: #fff9df;
-}
-
-.nivel-naranja {
-    border-left-color: #e8892f;
-    background-color: #fff2e6;
-}
-
-.nivel-rojo {
-    border-left-color: #d83b3b;
-    background-color: #fff0f0;
-}
-
-@media (max-width: 767px) {
-
-    .ecoscore-certificado {
-        padding: 22px;
-        border-radius: 18px;
-    }
-
-    .encabezado-ecoscore {
-        flex-direction: column;
-    }
-
-    .contenido-ecoscore {
-        grid-template-columns: 1fr;
-    }
-
-    .resultado-principal-ecoscore,
-    .criterios-ecoscore {
-        padding: 20px;
-    }
-
-    .lista-criterios {
-        grid-template-columns: 1fr;
-    }
-
-    .fila-ecoscore {
-        grid-template-columns: 1fr;
-        gap: 4px;
-    }
-}
-
-/* =========================================================
-   CORRECCIÓN ECOSCORE EN CELULAR
-   ========================================================= */
-
-.ecoscore-certificado {
-    display: block;
-    width: 100%;
-    padding: 32px;
-    border-radius: 24px;
-    border-top: 6px solid var(--verde-ambiental);
-    background-color: var(--blanco);
-    box-shadow: var(--sombra);
-}
-
-.encabezado-ecoscore {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 24px;
-    margin-bottom: 28px;
-}
-
-.contenido-ecoscore {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-}
-
-.resultado-principal-ecoscore,
-.criterios-ecoscore {
-    padding: 24px;
-    border-radius: 20px;
-}
-
-.resultado-principal-ecoscore {
-    background-color: var(--verde-claro);
-    border: 1px solid #cfe5d7;
-}
-
-.criterios-ecoscore {
-    background-color: #f8fafc;
-    border: 1px solid #dfe7ed;
-}
-
-.lista-criterios {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-}
-
-.lista-criterios span {
-    display: block;
-    padding: 11px 13px;
-    border-radius: 12px;
-    background-color: var(--blanco);
-}
-
-.escala-ecoscore {
-    margin-top: 28px;
-    padding-top: 26px;
-    border-top: 1px solid #dfe7ed;
-}
-
-.fila-ecoscore {
-    padding: 14px 16px;
-    display: grid;
-    grid-template-columns: 100px 105px 90px 1fr;
-    align-items: center;
-    gap: 12px;
-    border-left: 6px solid transparent;
-    border-radius: 14px;
-}
-
-/* CELULAR */
-
-@media (max-width: 767px) {
-
-    .ecoscore-certificado {
-        padding: 20px;
-        border-radius: 18px;
-    }
+    .seccion-datos-ambientales { margin-top: 26px; }
+    .encabezado-datos { text-align: center; }
+    .cabecera-tarjeta { align-items: flex-start; }
+    .ecoscore-certificado { padding: 20px; }
 
     .encabezado-ecoscore {
         flex-direction: column;
         gap: 14px;
     }
 
-    .estado-evaluacion {
-        align-self: flex-start;
-    }
-
-    .contenido-ecoscore {
-        display: block;
-    }
-
-    .resultado-principal-ecoscore,
-    .criterios-ecoscore {
-        width: 100%;
-        padding: 18px;
-    }
-
-    .criterios-ecoscore {
-        margin-top: 18px;
-    }
-
-    .numero-ecoscore {
-        font-size: 2.2rem;
-    }
+    .estado-evaluacion { align-self: flex-start; }
+    .resultado-principal-ecoscore { padding: 18px; }
+    .numero-ecoscore { font-size: 2.2rem; }
 
     .estrellas-principales {
         font-size: 1.45rem;
         letter-spacing: 2px;
     }
+
+    .boton-detalle-ecoscore {
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .icono-detalle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .texto-detalle strong { font-size: .95rem; }
+    .texto-detalle small { font-size: .82rem; }
+    .detalle-ecoscore { padding: 18px; }
 
     .lista-criterios {
         grid-template-columns: 1fr;
@@ -1268,489 +865,31 @@ p {
         display: block;
     }
 
-    .fila-ecoscore .estrellas-ecoscore {
-        margin: 4px 0;
-    }
+    .fila-ecoscore .estrellas-ecoscore { margin: 4px 0; }
 
     .fila-ecoscore small {
         margin-top: 5px;
         line-height: 1.4;
     }
-}
 
-/* =========================================================
-   DESPLEGABLE ECOSCORE
-   ========================================================= */
-
-.boton-detalle-ecoscore {
-    width: 100%;
-    margin-top: 24px;
-    padding: 18px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    border: 1px solid #d8e2e9;
-    border-radius: 17px;
-    background-color: #f8fafc;
-    color: var(--azul-oscuro);
-    text-align: left;
-    cursor: pointer;
-    transition:
-        border-color 0.2s ease,
-        background-color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.boton-detalle-ecoscore:hover {
-    border-color: var(--azul-institucional);
-    background-color: var(--azul-claro);
-    transform: translateY(-1px);
-}
-
-.icono-detalle {
-    flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    background-color: var(--azul-institucional);
-    color: var(--blanco);
-    font-size: 1.2rem;
-    font-weight: 800;
-}
-
-.texto-detalle {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-}
-
-.texto-detalle strong {
-    font-size: 1rem;
-}
-
-.texto-detalle small {
-    color: var(--gris-texto);
-    line-height: 1.4;
-}
-
-.flecha-detalle {
-    flex-shrink: 0;
-    color: var(--azul-institucional);
-    font-size: 0.9rem;
-    transition: transform 0.25s ease;
-}
-
-.boton-detalle-ecoscore[aria-expanded="true"] .flecha-detalle {
-    transform: rotate(180deg);
-}
-
-.detalle-ecoscore {
-    margin-top: 18px;
-    padding: 24px;
-    border-radius: 18px;
-    border: 1px solid #dfe7ed;
-    background-color: #f8fafc;
-}
-
-.detalle-ecoscore .criterios-ecoscore {
-    padding: 0;
-    border: 0;
-    background-color: transparent;
-}
-
-.detalle-ecoscore .criterios-ecoscore p {
-    color: var(--gris-texto);
-}
-
-.detalle-ecoscore .escala-ecoscore {
-    margin-top: 26px;
-}
-
-@media (max-width: 767px) {
-
-    .boton-detalle-ecoscore {
-        padding: 15px;
-        gap: 12px;
-    }
-
-    .icono-detalle {
-        width: 40px;
-        height: 40px;
-    }
-
-    .texto-detalle strong {
-        font-size: 0.95rem;
-    }
-
-    .texto-detalle small {
-        font-size: 0.82rem;
-    }
-
-    .detalle-ecoscore {
-        padding: 18px;
-    }
-}
-
-.boton-cerrar-ecoscore {
-    width: 100%;
-    margin-top: 22px;
-    padding: 13px 18px;
-    border: 1px solid #d8e2e9;
-    border-radius: 14px;
-    background-color: var(--blanco);
-    color: var(--azul-institucional);
-    font-weight: 800;
-    cursor: pointer;
-    transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.boton-cerrar-ecoscore:hover {
-    border-color: var(--azul-institucional);
-    background-color: var(--azul-claro);
-    transform: translateY(-1px);
-}
-
-
-@media (max-width: 767px) {
-    .desafio-principal {
-        font-size: 1.1rem;
-    }
-}
-
-/* =======================================
-   DESAFÍO AMBIENTAL
-======================================= */
-
-.desafio {
-
-    padding: 50px 35px;
-
-    text-align: center;
-
-    border-radius: 25px;
-
-    background: linear-gradient(135deg,
-            #f7fcf8,
-            #eef8f2);
-
-    border-top: 6px solid var(--verde-ambiental);
-
-    box-shadow: var(--sombra);
-
-}
-
-.icono-desafio {
-
-    font-size: 3rem;
-
-    margin-bottom: 10px;
-
-}
-
-.desafio h2 {
-
-    margin: 10px 0 25px;
-
-    color: var(--azul-oscuro);
-
-    font-weight: 800;
-
-}
-
-.desafio-principal {
-
-    max-width: 650px;
-
-    margin: 0 auto 18px;
-
-    color: var(--azul-oscuro);
-
-    font-size: 1.35rem;
-
-    font-weight: 800;
-
-}
-
-.desafio-secundario {
-
-    max-width: 650px;
-
-    margin: 0 auto 35px;
-
-    color: var(--gris-texto);
-
-    line-height: 1.8;
-
-}
-
-.frase-final {
-
-    display: inline-block;
-
-    padding: 15px 24px;
-
-    border-radius: 15px;
-
-    background: white;
-
-    color: var(--verde-ambiental);
-
-    font-weight: 700;
-
-    box-shadow: 0 5px 18px rgba(0, 0, 0, .06);
-
-}
-
-@media(max-width:767px) {
-
-    .desafio {
-
-        padding: 35px 22px;
-
-    }
-
-    .icono-desafio {
-
-        font-size: 2.5rem;
-
-    }
-
-    .desafio-principal {
-
-        font-size: 1.15rem;
-
-    }
-
-}
-
-/* =========================================================
-   CIERRE AMBIENTAL
-   ========================================================= */
-
-.cierre-ambiental {
-    max-width: 820px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 54px 24px;
-    text-align: center;
-    border-top: 1px solid #ccd7df;
-    border-bottom: 1px solid #ccd7df;
-}
-
-.cierre-etiqueta {
-    margin-bottom: 18px;
-    color: var(--rojo-institucional);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-
-.cierre-accion {
-    max-width: 650px;
-    margin: 0 auto 16px;
-    color: var(--azul-oscuro);
-    font-size: clamp(1.5rem, 4vw, 2.15rem);
-    font-weight: 800;
-    line-height: 1.25;
-}
-
-.cierre-consejo {
-    max-width: 620px;
-    margin: 0 auto;
-    color: var(--gris-texto);
-    font-size: 1rem;
-    line-height: 1.75;
-}
-
-.cierre-reflexion {
-    position: relative;
-    max-width: 660px;
-    margin: 38px auto 0;
-    padding-top: 30px;
-    color: var(--azul-institucional);
-    font-size: 1.12rem;
-    font-style: italic;
-    font-weight: 700;
-    line-height: 1.65;
-}
-
-.cierre-reflexion::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 75px;
-    height: 3px;
-    border-radius: 999px;
-    background-color: var(--rojo-institucional);
-    transform: translateX(-50%);
-}
-
-@media (max-width: 767px) {
-
-    .cierre-ambiental {
-        padding: 42px 16px;
-    }
-
-    .cierre-accion {
-        font-size: 1.45rem;
-    }
-
-    .cierre-consejo {
-        font-size: 0.95rem;
-    }
-
-    .cierre-reflexion {
-        margin-top: 30px;
-        font-size: 1rem;
-    }
-}
-
-/* =======================================
-   TU IMPACTO
-======================================= */
-
-.impacto-final {
-
-    max-width: 700px;
-
-    margin: 70px auto;
-
-    text-align: center;
-
-}
-
-.impacto-etiqueta {
-
-    margin-bottom: 18px;
-
-    color: var(--rojo-institucional);
-
-    font-size: .78rem;
-
-    font-weight: 800;
-
-    letter-spacing: .15em;
-
-    text-transform: uppercase;
-
-}
-
-.impacto-titulo {
-
-    max-width: 600px;
-
-    margin: 0 auto 45px;
-
-    color: var(--azul-oscuro);
-
-    font-size: clamp(1.5rem, 4vw, 2rem);
-
-    font-weight: 800;
-
-    line-height: 1.3;
-
-}
-
-.impacto-dato {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 18px;
-
-    padding: 30px;
-
-    border-top: 1px solid #d9e0e6;
-
-    border-bottom: 1px solid #d9e0e6;
-
-}
-
-.impacto-icono {
-
-    font-size: 2.5rem;
-
-}
-
-.impacto-label {
-
-    margin-bottom: 6px;
-
-    color: var(--gris-texto);
-
-    font-size: .9rem;
-
-    text-transform: uppercase;
-
-    letter-spacing: .08em;
-
-}
-
-.impacto-valor {
-
-    margin: 0;
-
-    color: var(--azul-institucional);
-
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
-
-    font-weight: 800;
-
-}
-
-.impacto-reflexion {
-
-    max-width: 560px;
-
-    margin: 45px auto 0;
-
-    color: var(--gris-texto);
-
-    font-size: 1.05rem;
-
-    font-style: italic;
-
-    line-height: 1.8;
-
-}
-
-@media(max-width:767px) {
-
-    .impacto-final {
-
-        margin: 50px auto;
-
-    }
+    .impacto-final { margin: 50px auto; }
 
     .impacto-dato {
-
-        flex-direction: column;
-
         padding: 25px 15px;
-
+        flex-direction: column;
     }
 
-    .impacto-icono {
+    .impacto-icono { font-size: 2rem; }
+    .impacto-valor { font-size: 1.8rem; }
+}
 
-        font-size: 2rem;
+@media (max-width: 480px) {
+    .logo-prenda { width: 102px; height: 102px; }
+    .encabezado-prenda h1 { font-size: 1.65rem; }
+    .nombre-colegio { font-size: .74rem; }
 
+    .contenido-footer {
+        flex-direction: column;
+        text-align: center;
     }
-
-    .impacto-valor {
-
-        font-size: 1.8rem;
-
-    }
-
 }
