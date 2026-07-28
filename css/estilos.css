@@ -17,9 +17,13 @@
     --radio-grande: 24px;
 }
 
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -28,8 +32,13 @@ body {
     background-color: var(--gris-fondo);
 }
 
-img { max-width: 100%; }
-p { line-height: 1.65; }
+img {
+    max-width: 100%;
+}
+
+p {
+    line-height: 1.65;
+}
 
 .portada-institucional {
     position: relative;
@@ -159,7 +168,9 @@ p { line-height: 1.65; }
     text-transform: uppercase;
 }
 
-.seccion-informacion { padding-top: 25px; }
+.seccion-informacion {
+    padding-top: 25px;
+}
 
 .encabezado-seccion {
     max-width: 700px;
@@ -197,7 +208,9 @@ p { line-height: 1.65; }
     color: var(--gris-texto);
 }
 
-.seccion-qr { padding-top: 30px; }
+.seccion-qr {
+    padding-top: 30px;
+}
 
 .mensaje-qr {
     padding: 36px;
@@ -222,87 +235,197 @@ p { line-height: 1.65; }
 }
 
 .encabezado-prenda {
+
     position: relative;
     overflow: hidden;
-    color: var(--blanco);
-    background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-principal));
+
+    color: white;
+
+    background:
+        linear-gradient(135deg,
+            #145a3d,
+            #26734d,
+            #4c9b71);
+
 }
 
 .encabezado-prenda::before {
-    top: -90px;
-    left: -90px;
-    width: 250px;
-    height: 250px;
-    background-color: rgba(255, 255, 255, .04);
-}
 
-.encabezado-prenda::after {
-    right: -80px;
-    bottom: -120px;
-    width: 280px;
-    height: 280px;
-    background-color: rgba(138, 191, 90, .24);
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(circle at top right,
+            rgba(255, 255, 255, .10),
+            transparent 40%);
+
 }
 
 .encabezado-prenda .container {
+
     position: relative;
-    z-index: 1;
+
+    z-index: 2;
+
 }
 
 .encabezado-prenda-contenido {
+
     display: flex;
+
     align-items: center;
-    gap: 24px;
+
+    gap: 35px;
+
+    padding: 15px 0;
+
 }
 
 .logo-prenda {
-    width: 125px;
-    height: 125px;
-    flex-shrink: 0;
-    padding: 8px;
+
+    width: 120px;
+
+    height: 120px;
+
     object-fit: contain;
+
+    background: white;
+
     border-radius: 50%;
-    background-color: var(--blanco);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, .19), 0 0 0 4px rgba(255, 255, 255, .14);
+
+    padding: 8px;
+
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, .18);
+
+}
+
+.informacion-header {
+
+    flex: 1;
+
 }
 
 .nombre-colegio {
-    margin-bottom: 6px;
-    font-size: .82rem;
-    font-weight: 800;
-    letter-spacing: .10em;
+
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    padding: 5px 12px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, .12);
+
+    font-size: .78rem;
+
+    letter-spacing: .12em;
+
     text-transform: uppercase;
+
+    font-weight: 700;
+
 }
 
 .encabezado-prenda h1 {
-    margin-bottom: 8px;
-    font-size: 2.4rem;
-    font-weight: 800;
+
+    margin: 0;
+
+    line-height: 1;
+
+    font-size: clamp(2.5rem, 6vw, 4rem);
+
+    font-weight: 900;
+
+    letter-spacing: .03em;
+
+}
+
+.encabezado-prenda h1 span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #d7f3df;
+
 }
 
 .subtitulo-prenda {
-    margin-bottom: 0;
-    color: rgba(255, 255, 255, .86);
+
+    margin-top: 22px;
+
+    margin-bottom: 12px;
+
+    max-width: 650px;
+
+    font-size: 1.15rem;
+
+    color: rgba(255, 255, 255, .92);
+
 }
 
+.frase-header {
+
+    max-width: 620px;
+
+    margin: 0;
+
+    font-size: 1rem;
+
+    color: rgba(255, 255, 255, .75);
+
+}
+
+
+/* =========================================================
+   PRESENTACIÓN DE LA PRENDA
+   ========================================================= */
+
 .presentacion-prenda {
-    padding: 28px;
-    border-top: 5px solid var(--verde-medio);
-    border-radius: 22px;
+    position: relative;
+    padding: 34px;
+    border: 1px solid rgba(38, 115, 77, 0.08);
+    border-radius: 26px;
     background-color: var(--blanco);
-    box-shadow: var(--sombra);
+    box-shadow: var(--sombra-suave);
+}
+
+.presentacion-prenda::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 34px;
+    right: 34px;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(
+        90deg,
+        var(--verde-principal),
+        var(--acento)
+    );
 }
 
 .contenedor-imagen-prenda {
-    min-height: 280px;
-    padding: 24px;
+    min-height: 300px;
+    padding: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border: 2px dashed #b9cec1;
-    border-radius: var(--radio-medio);
-    background-color: var(--verde-suave);
+    overflow: hidden;
+    border: 2px dashed #b7cec0;
+    border-radius: 22px;
+    background: linear-gradient(
+        145deg,
+        var(--verde-suave),
+        var(--verde-claro)
+    );
     color: var(--verde-principal);
     text-align: center;
 }
@@ -311,51 +434,92 @@ p { line-height: 1.65; }
     width: 100%;
     max-height: 360px;
     object-fit: contain;
-    border-radius: 14px;
+    border-radius: 16px;
 }
 
+.estado-imagen,
 .contenedor-imagen-prenda span {
-    padding: 8px 14px;
+    padding: 7px 13px;
     border-radius: 999px;
-    background-color: rgba(38, 115, 77, .09);
-    font-size: .78rem;
+    background-color: rgba(38, 115, 77, 0.10);
+    font-size: 0.76rem;
     font-weight: 800;
-    letter-spacing: .04em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
 .contenedor-imagen-prenda p {
-    margin: 18px 0 0;
+    margin: 20px 0 0;
+    color: var(--verde-oscuro);
     font-size: 1.2rem;
     font-weight: 800;
 }
 
-.descripcion-prenda { padding: 12px; }
-.etiqueta-prenda { margin-bottom: 8px; }
-.etiqueta-seccion { margin-bottom: 7px; }
+.descripcion-prenda {
+    padding: 10px 8px 10px 18px;
+}
 
-.descripcion-prenda h2,
-.encabezado-datos h2,
-.encabezado-ecoscore h2 {
+.etiqueta-prenda {
+    margin-bottom: 10px;
+    letter-spacing: 0.12em;
+}
+
+.descripcion-prenda h2 {
+    margin-bottom: 16px;
     color: var(--verde-oscuro);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     font-weight: 800;
 }
 
-.descripcion-prenda p,
-.encabezado-datos p:last-child,
-.encabezado-ecoscore p:last-child {
+.descripcion-principal,
+.descripcion-prenda > p:not(.etiqueta-prenda) {
+    max-width: 620px;
     color: var(--gris-texto);
+    font-size: 1.04rem;
 }
 
-.seccion-datos-ambientales { margin-top: 34px; }
+.descripcion-principal {
+    margin-bottom: 24px;
+}
+
+.detalle-presentacion {
+    max-width: 620px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    border-left: 4px solid var(--verde-medio);
+    border-radius: 0 14px 14px 0;
+    background-color: var(--verde-suave);
+}
+
+.detalle-presentacion-icono {
+    flex-shrink: 0;
+    font-size: 1.25rem;
+}
+
+.detalle-presentacion p {
+    margin: 0;
+    color: var(--gris-texto);
+    line-height: 1.55;
+}
+
+.seccion-datos-ambientales {
+    margin-top: 34px;
+}
 
 .encabezado-datos {
     max-width: 700px;
     margin-bottom: 28px;
 }
 
-.encabezado-datos h2 { margin-bottom: 10px; }
-.encabezado-datos p:last-child { margin-bottom: 0; }
+.encabezado-datos h2 {
+    margin-bottom: 10px;
+}
+
+.encabezado-datos p:last-child {
+    margin-bottom: 0;
+}
 
 .tarjeta-info {
     padding: 28px;
@@ -416,12 +580,29 @@ p { line-height: 1.65; }
     text-transform: uppercase;
 }
 
-.tarjeta-agua { border-bottom-color: #4b9cc6; }
-.tarjeta-carbono { border-bottom-color: #39705a; }
-.tarjeta-textil { border-bottom-color: #7c8c82; }
-.tarjeta-degradacion { border-bottom-color: #b9893f; }
-.tarjeta-circularidad { border-bottom-color: var(--verde-principal); }
-.tarjeta-durabilidad { border-bottom-color: var(--acento); }
+.tarjeta-agua {
+    border-bottom-color: #4b9cc6;
+}
+
+.tarjeta-carbono {
+    border-bottom-color: #39705a;
+}
+
+.tarjeta-textil {
+    border-bottom-color: #7c8c82;
+}
+
+.tarjeta-degradacion {
+    border-bottom-color: #b9893f;
+}
+
+.tarjeta-circularidad {
+    border-bottom-color: var(--verde-principal);
+}
+
+.tarjeta-durabilidad {
+    border-bottom-color: var(--acento);
+}
 
 .ecoscore-certificado {
     width: 100%;
@@ -440,7 +621,9 @@ p { line-height: 1.65; }
     gap: 24px;
 }
 
-.encabezado-ecoscore h2 { margin-bottom: 8px; }
+.encabezado-ecoscore h2 {
+    margin-bottom: 8px;
+}
 
 .estado-evaluacion {
     flex-shrink: 0;
@@ -539,7 +722,9 @@ p { line-height: 1.65; }
     gap: 3px;
 }
 
-.texto-detalle strong { font-size: 1rem; }
+.texto-detalle strong {
+    font-size: 1rem;
+}
 
 .texto-detalle small {
     color: var(--gris-texto);
@@ -575,7 +760,9 @@ p { line-height: 1.65; }
     font-weight: 800;
 }
 
-.criterios-ecoscore p { color: var(--gris-texto); }
+.criterios-ecoscore p {
+    color: var(--gris-texto);
+}
 
 .lista-criterios {
     display: grid;
@@ -621,14 +808,38 @@ p { line-height: 1.65; }
     font-weight: 800;
 }
 
-.estrellas-ecoscore { letter-spacing: 2px; }
-.fila-ecoscore small { color: var(--gris-texto); }
+.estrellas-ecoscore {
+    letter-spacing: 2px;
+}
 
-.nivel-platino { border-left-color: #8da2b5; background-color: #f1f5f8; }
-.nivel-verde { border-left-color: #2d9b5f; background-color: #edf8f1; }
-.nivel-amarillo { border-left-color: #e0b320; background-color: #fff9df; }
-.nivel-naranja { border-left-color: #e8892f; background-color: #fff2e6; }
-.nivel-rojo { border-left-color: #d83b3b; background-color: #fff0f0; }
+.fila-ecoscore small {
+    color: var(--gris-texto);
+}
+
+.nivel-platino {
+    border-left-color: #8da2b5;
+    background-color: #f1f5f8;
+}
+
+.nivel-verde {
+    border-left-color: #2d9b5f;
+    background-color: #edf8f1;
+}
+
+.nivel-amarillo {
+    border-left-color: #e0b320;
+    background-color: #fff9df;
+}
+
+.nivel-naranja {
+    border-left-color: #e8892f;
+    background-color: #fff2e6;
+}
+
+.nivel-rojo {
+    border-left-color: #d83b3b;
+    background-color: #fff0f0;
+}
 
 .boton-cerrar-ecoscore {
     width: 100%;
@@ -679,7 +890,9 @@ p { line-height: 1.65; }
     border-bottom: 1px solid var(--gris-borde);
 }
 
-.impacto-icono { font-size: 2.5rem; }
+.impacto-icono {
+    font-size: 2.5rem;
+}
 
 .impacto-label {
     margin-bottom: 6px;
@@ -752,8 +965,14 @@ p { line-height: 1.65; }
         padding: 55px 16px 85px;
     }
 
-    .logo-portada { width: 120px; height: 120px; }
-    .seccion-presentacion { margin-top: -55px; }
+    .logo-portada {
+        width: 120px;
+        height: 120px;
+    }
+
+    .seccion-presentacion {
+        margin-top: -55px;
+    }
 
     .seccion-presentacion,
     .seccion-informacion,
@@ -777,7 +996,10 @@ p { line-height: 1.65; }
         flex-direction: column;
     }
 
-    .icono-qr { width: 68px; height: 68px; }
+    .icono-qr {
+        width: 68px;
+        height: 68px;
+    }
 
     main.container {
         padding-left: 16px;
@@ -801,29 +1023,74 @@ p { line-height: 1.65; }
         padding: 7px;
     }
 
-    .encabezado-prenda h1 { font-size: 1.9rem; }
-    .subtitulo-prenda { font-size: .95rem; }
-    .presentacion-prenda { padding: 18px; }
-    .contenedor-imagen-prenda { min-height: 230px; }
+    .encabezado-prenda h1 {
+        font-size: 1.9rem;
+    }
+
+    .subtitulo-prenda {
+        font-size: .95rem;
+    }
+
+    .presentacion-prenda {
+        padding: 22px;
+        border-radius: 20px;
+    }
+
+    .presentacion-prenda::before {
+        left: 22px;
+        right: 22px;
+    }
+
+    .contenedor-imagen-prenda {
+        min-height: 230px;
+        padding: 22px;
+    }
 
     .descripcion-prenda {
-        padding: 4px;
+        padding: 8px 0 0;
         text-align: center;
     }
 
-    .seccion-datos-ambientales { margin-top: 26px; }
-    .encabezado-datos { text-align: center; }
-    .cabecera-tarjeta { align-items: flex-start; }
-    .ecoscore-certificado { padding: 20px; }
+    .descripcion-prenda h2 {
+        font-size: 1.75rem;
+    }
+
+    .detalle-presentacion {
+        text-align: left;
+    }
+
+    .seccion-datos-ambientales {
+        margin-top: 26px;
+    }
+
+    .encabezado-datos {
+        text-align: center;
+    }
+
+    .cabecera-tarjeta {
+        align-items: flex-start;
+    }
+
+    .ecoscore-certificado {
+        padding: 20px;
+    }
 
     .encabezado-ecoscore {
         flex-direction: column;
         gap: 14px;
     }
 
-    .estado-evaluacion { align-self: flex-start; }
-    .resultado-principal-ecoscore { padding: 18px; }
-    .numero-ecoscore { font-size: 2.2rem; }
+    .estado-evaluacion {
+        align-self: flex-start;
+    }
+
+    .resultado-principal-ecoscore {
+        padding: 18px;
+    }
+
+    .numero-ecoscore {
+        font-size: 2.2rem;
+    }
 
     .estrellas-principales {
         font-size: 1.45rem;
@@ -840,9 +1107,17 @@ p { line-height: 1.65; }
         height: 40px;
     }
 
-    .texto-detalle strong { font-size: .95rem; }
-    .texto-detalle small { font-size: .82rem; }
-    .detalle-ecoscore { padding: 18px; }
+    .texto-detalle strong {
+        font-size: .95rem;
+    }
+
+    .texto-detalle small {
+        font-size: .82rem;
+    }
+
+    .detalle-ecoscore {
+        padding: 18px;
+    }
 
     .lista-criterios {
         grid-template-columns: 1fr;
@@ -865,28 +1140,46 @@ p { line-height: 1.65; }
         display: block;
     }
 
-    .fila-ecoscore .estrellas-ecoscore { margin: 4px 0; }
+    .fila-ecoscore .estrellas-ecoscore {
+        margin: 4px 0;
+    }
 
     .fila-ecoscore small {
         margin-top: 5px;
         line-height: 1.4;
     }
 
-    .impacto-final { margin: 50px auto; }
+    .impacto-final {
+        margin: 50px auto;
+    }
 
     .impacto-dato {
         padding: 25px 15px;
         flex-direction: column;
     }
 
-    .impacto-icono { font-size: 2rem; }
-    .impacto-valor { font-size: 1.8rem; }
+    .impacto-icono {
+        font-size: 2rem;
+    }
+
+    .impacto-valor {
+        font-size: 1.8rem;
+    }
 }
 
 @media (max-width: 480px) {
-    .logo-prenda { width: 102px; height: 102px; }
-    .encabezado-prenda h1 { font-size: 1.65rem; }
-    .nombre-colegio { font-size: .74rem; }
+    .logo-prenda {
+        width: 102px;
+        height: 102px;
+    }
+
+    .encabezado-prenda h1 {
+        font-size: 1.65rem;
+    }
+
+    .nombre-colegio {
+        font-size: .74rem;
+    }
 
     .contenido-footer {
         flex-direction: column;
