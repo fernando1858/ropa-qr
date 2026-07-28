@@ -382,128 +382,6 @@ p {
 
 }
 
-
-/* =========================================================
-   PRESENTACIÓN DE LA PRENDA
-   ========================================================= */
-
-.presentacion-prenda {
-    position: relative;
-    padding: 34px;
-    border: 1px solid rgba(38, 115, 77, 0.08);
-    border-radius: 26px;
-    background-color: var(--blanco);
-    box-shadow: var(--sombra-suave);
-}
-
-.presentacion-prenda::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 34px;
-    right: 34px;
-    height: 4px;
-    border-radius: 999px;
-    background: linear-gradient(
-        90deg,
-        var(--verde-principal),
-        var(--acento)
-    );
-}
-
-.contenedor-imagen-prenda {
-    min-height: 300px;
-    padding: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    overflow: hidden;
-    border: 2px dashed #b7cec0;
-    border-radius: 22px;
-    background: linear-gradient(
-        145deg,
-        var(--verde-suave),
-        var(--verde-claro)
-    );
-    color: var(--verde-principal);
-    text-align: center;
-}
-
-.contenedor-imagen-prenda img {
-    width: 100%;
-    max-height: 360px;
-    object-fit: contain;
-    border-radius: 16px;
-}
-
-.estado-imagen,
-.contenedor-imagen-prenda span {
-    padding: 7px 13px;
-    border-radius: 999px;
-    background-color: rgba(38, 115, 77, 0.10);
-    font-size: 0.76rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.contenedor-imagen-prenda p {
-    margin: 20px 0 0;
-    color: var(--verde-oscuro);
-    font-size: 1.2rem;
-    font-weight: 800;
-}
-
-.descripcion-prenda {
-    padding: 10px 8px 10px 18px;
-}
-
-.etiqueta-prenda {
-    margin-bottom: 10px;
-    letter-spacing: 0.12em;
-}
-
-.descripcion-prenda h2 {
-    margin-bottom: 16px;
-    color: var(--verde-oscuro);
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    font-weight: 800;
-}
-
-.descripcion-principal,
-.descripcion-prenda > p:not(.etiqueta-prenda) {
-    max-width: 620px;
-    color: var(--gris-texto);
-    font-size: 1.04rem;
-}
-
-.descripcion-principal {
-    margin-bottom: 24px;
-}
-
-.detalle-presentacion {
-    max-width: 620px;
-    padding: 16px 18px;
-    display: flex;
-    align-items: flex-start;
-    gap: 13px;
-    border-left: 4px solid var(--verde-medio);
-    border-radius: 0 14px 14px 0;
-    background-color: var(--verde-suave);
-}
-
-.detalle-presentacion-icono {
-    flex-shrink: 0;
-    font-size: 1.25rem;
-}
-
-.detalle-presentacion p {
-    margin: 0;
-    color: var(--gris-texto);
-    line-height: 1.55;
-}
-
 .seccion-datos-ambientales {
     margin-top: 34px;
 }
@@ -1032,31 +910,16 @@ p {
     }
 
     .presentacion-prenda {
-        padding: 22px;
-        border-radius: 20px;
-    }
-
-    .presentacion-prenda::before {
-        left: 22px;
-        right: 22px;
+        padding: 18px;
     }
 
     .contenedor-imagen-prenda {
         min-height: 230px;
-        padding: 22px;
     }
 
     .descripcion-prenda {
-        padding: 8px 0 0;
+        padding: 4px;
         text-align: center;
-    }
-
-    .descripcion-prenda h2 {
-        font-size: 1.75rem;
-    }
-
-    .detalle-presentacion {
-        text-align: left;
     }
 
     .seccion-datos-ambientales {
@@ -1184,5 +1047,698 @@ p {
     .contenido-footer {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+/* =========================================================
+   ECO-PASS TEXTIL — PULIDO VISUAL V3
+   ========================================================= */
+
+/* 1) Más personalidad en el encabezado */
+.encabezado-prenda {
+    isolation: isolate;
+}
+
+.encabezado-prenda::before {
+    z-index: -1;
+    opacity: 1;
+}
+
+.encabezado-prenda::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: -90px;
+    bottom: -125px;
+    width: 330px;
+    height: 330px;
+    border-radius: 46% 54% 58% 42% / 52% 42% 58% 48%;
+    background:
+        radial-gradient(circle at 35% 35%,
+            rgba(255, 255, 255, 0.10),
+            rgba(138, 191, 90, 0.20) 48%,
+            rgba(138, 191, 90, 0.05) 72%,
+            transparent 73%);
+    transform: rotate(-12deg);
+}
+
+.encabezado-prenda-contenido {
+    min-height: 350px;
+}
+
+.informacion-header {
+    position: relative;
+}
+
+.informacion-header::after {
+    content: "";
+    display: block;
+    width: 82px;
+    height: 4px;
+    margin-top: 24px;
+    border-radius: 999px;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.95),
+            var(--acento));
+}
+
+/* 2) Identidad visual por indicador */
+.tarjeta-info {
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta-info::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 82px;
+    height: 82px;
+    border-radius: 0 20px 0 82px;
+    opacity: 0.08;
+    background-color: currentColor;
+    pointer-events: none;
+}
+
+.tarjeta-agua {
+    color: #3189b9;
+    border-bottom-color: #4aa5cf;
+}
+
+.tarjeta-agua .cabecera-tarjeta .icono {
+    background-color: #eaf7fc;
+}
+
+.tarjeta-carbono {
+    color: #2f6f56;
+    border-bottom-color: #39785e;
+}
+
+.tarjeta-carbono .cabecera-tarjeta .icono {
+    background-color: #e8f4ed;
+}
+
+.tarjeta-textil {
+    color: #6f7f76;
+    border-bottom-color: #87978e;
+}
+
+.tarjeta-textil .cabecera-tarjeta .icono {
+    background-color: #eef2ef;
+}
+
+.tarjeta-degradacion {
+    color: #a97728;
+    border-bottom-color: #c18e3c;
+}
+
+.tarjeta-degradacion .cabecera-tarjeta .icono {
+    background-color: #fbf3e4;
+}
+
+.tarjeta-circularidad {
+    color: #26734d;
+    border-bottom-color: #2d8659;
+}
+
+.tarjeta-circularidad .cabecera-tarjeta .icono {
+    background-color: #e8f6ed;
+}
+
+.tarjeta-durabilidad {
+    color: #70a63f;
+    border-bottom-color: #8bbf55;
+}
+
+.tarjeta-durabilidad .cabecera-tarjeta .icono {
+    background-color: #f0f8e8;
+}
+
+.tarjeta-info .cabecera-tarjeta h3 {
+    color: currentColor;
+}
+
+/* 3) EcoScore como protagonista */
+.ecoscore-certificado {
+    position: relative;
+    overflow: hidden;
+    border-top-width: 8px;
+    box-shadow:
+        0 18px 44px rgba(23, 77, 54, 0.13),
+        0 2px 8px rgba(23, 77, 54, 0.05);
+}
+
+.ecoscore-certificado::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -90px;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background-color: rgba(138, 191, 90, 0.08);
+    pointer-events: none;
+}
+
+.resultado-principal-ecoscore {
+    position: relative;
+    padding: 34px;
+    border: 1px solid #bcdcc8;
+    background:
+        linear-gradient(145deg,
+            #edf9f1,
+            #dff2e6);
+}
+
+.resultado-principal-ecoscore::after {
+    content: "ECO";
+    position: absolute;
+    right: 22px;
+    bottom: 10px;
+    color: rgba(38, 115, 77, 0.06);
+    font-size: clamp(3rem, 12vw, 7rem);
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    pointer-events: none;
+}
+
+.numero-ecoscore {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(3.2rem, 10vw, 5.4rem);
+    line-height: 1;
+}
+
+.estrellas-principales,
+.nombre-nivel,
+.descripcion-nivel,
+.texto-puntaje {
+    position: relative;
+    z-index: 1;
+}
+
+.boton-detalle-ecoscore {
+    border-width: 1.5px;
+}
+
+.boton-detalle-ecoscore:hover,
+.boton-detalle-ecoscore:focus-visible {
+    box-shadow: 0 8px 22px rgba(23, 77, 54, 0.08);
+}
+
+/* 4) Cierre visual de la experiencia */
+.cierre-experiencia {
+    max-width: 720px;
+    margin: 0 auto 70px;
+    padding: 34px 24px 0;
+    text-align: center;
+}
+
+.cierre-experiencia::before {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 3px;
+    margin: 0 auto 26px;
+    border-radius: 999px;
+    background:
+        linear-gradient(90deg,
+            var(--verde-principal),
+            var(--acento));
+}
+
+.cierre-experiencia-icono {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 2rem;
+}
+
+.cierre-experiencia p {
+    max-width: 560px;
+    margin: 0 auto;
+    color: var(--gris-texto);
+    font-size: 1.03rem;
+}
+
+/* 5) Footer con identidad de producto */
+.pie-pagina {
+    position: relative;
+    overflow: hidden;
+    margin-top: 0;
+    padding: 58px 0 46px;
+    text-align: center;
+}
+
+.pie-pagina::after {
+    content: "";
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    bottom: -125px;
+    height: 210px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.footer-marca {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 8px;
+    font-size: 1.45rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.footer-colegio {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 8px;
+    font-weight: 800;
+}
+
+.footer-descripcion {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.footer-version {
+    position: relative;
+    z-index: 1;
+    margin-top: 24px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   RESPONSIVE V3
+   ========================================================= */
+
+@media (max-width: 767px) {
+    .encabezado-prenda-contenido {
+        min-height: auto;
+    }
+
+    .informacion-header::after {
+        margin: 22px auto 0;
+    }
+
+    .encabezado-prenda::after {
+        right: -150px;
+        bottom: -100px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .tarjeta-info::after {
+        width: 64px;
+        height: 64px;
+    }
+
+    .resultado-principal-ecoscore {
+        padding: 24px;
+    }
+
+    .numero-ecoscore {
+        font-size: 3.55rem;
+    }
+
+    .resultado-principal-ecoscore::after {
+        right: 12px;
+        bottom: 12px;
+        font-size: 4.3rem;
+    }
+
+    .cierre-experiencia {
+        margin-bottom: 54px;
+        padding: 24px 18px 0;
+    }
+
+    .pie-pagina {
+        padding: 50px 22px 42px;
+    }
+
+    .footer-marca {
+        font-size: 1.25rem;
+    }
+}
+
+/* =========================================================
+   CORRECCIÓN PRESENTACIÓN DE LA PRENDA — V3.1
+   ========================================================= */
+
+.presentacion-prenda {
+    position: relative;
+    padding: 34px;
+    border-radius: 26px;
+    background-color: var(--blanco);
+    box-shadow: var(--sombra-suave);
+}
+
+.presentacion-prenda::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 34px;
+    right: 34px;
+    height: 4px;
+    border-radius: 999px;
+    background:
+        linear-gradient(90deg,
+            var(--verde-principal),
+            var(--acento));
+}
+
+.contenedor-imagen-prenda {
+    min-height: 300px;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px dashed #b7cec0;
+    border-radius: 22px;
+    background:
+        linear-gradient(145deg,
+            var(--verde-suave),
+            var(--verde-claro));
+    color: var(--verde-principal);
+    text-align: center;
+}
+
+.contenedor-imagen-prenda img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: contain;
+    border-radius: 14px;
+}
+
+.estado-imagen {
+    padding: 7px 13px;
+    border-radius: 999px;
+    background-color: rgba(38, 115, 77, 0.10);
+    color: var(--verde-principal);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.contenedor-imagen-prenda p {
+    margin: 20px 0 0;
+    color: var(--verde-oscuro);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.descripcion-prenda {
+    padding: 10px 8px 10px 18px;
+}
+
+.etiqueta-prenda {
+    margin-bottom: 10px;
+}
+
+.descripcion-prenda h2 {
+    margin-bottom: 16px;
+    color: var(--verde-oscuro);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+}
+
+.descripcion-principal {
+    max-width: 620px;
+    margin-bottom: 24px;
+    color: var(--gris-texto);
+    font-size: 1.04rem;
+}
+
+.detalle-presentacion {
+    max-width: 620px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    border-left: 4px solid var(--verde-medio);
+    border-radius: 0 14px 14px 0;
+    background-color: var(--verde-suave);
+}
+
+.detalle-presentacion-icono {
+    flex-shrink: 0;
+    font-size: 1.25rem;
+}
+
+.detalle-presentacion p {
+    margin: 0;
+    color: var(--gris-texto);
+    line-height: 1.55;
+}
+
+@media (max-width: 767px) {
+    .presentacion-prenda {
+        padding: 22px;
+        border-radius: 20px;
+    }
+
+    .presentacion-prenda::before {
+        left: 22px;
+        right: 22px;
+    }
+
+    .contenedor-imagen-prenda {
+        min-height: 230px;
+        padding: 22px;
+    }
+
+    .descripcion-prenda {
+        padding: 8px 0 0;
+        text-align: center;
+    }
+
+    .descripcion-prenda h2 {
+        font-size: 1.75rem;
+    }
+
+    .detalle-presentacion {
+        text-align: left;
+    }
+}
+
+/* =========================================================
+   ECO-PASS TEXTIL — HEADER CON MARCA INSTITUCIONAL V4
+   ========================================================= */
+
+.encabezado-prenda {
+    min-height: 520px;
+    padding: 34px 0 54px;
+}
+
+.marca-colegio {
+    position: absolute;
+    top: 28px;
+    right: 34px;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: var(--blanco);
+}
+
+.marca-colegio img {
+    width: 62px;
+    height: 62px;
+    flex-shrink: 0;
+    padding: 4px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: var(--blanco);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+}
+
+.marca-colegio-texto {
+    padding-left: 13px;
+    border-left: 1px solid rgba(255, 255, 255, 0.38);
+}
+
+.marca-colegio strong {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 0.98rem;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.marca-colegio span {
+    display: block;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.82rem;
+    line-height: 1.3;
+}
+
+.encabezado-prenda .container {
+    width: 100%;
+}
+
+.encabezado-prenda-contenido {
+    min-height: 400px;
+    padding: 35px 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0;
+    text-align: center;
+}
+
+.logo-eco-pass {
+    width: 185px;
+    height: auto;
+    margin-bottom: 10px;
+    object-fit: contain;
+    filter:
+        drop-shadow(0 18px 28px rgba(0, 0, 0, 0.20)) drop-shadow(0 0 24px rgba(138, 191, 90, 0.20));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.informacion-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.encabezado-prenda h1 {
+    margin: 0;
+    color: var(--blanco);
+    font-size: clamp(3rem, 7vw, 5.3rem);
+    font-weight: 900;
+    letter-spacing: 0.025em;
+    line-height: 0.92;
+    text-align: center;
+}
+
+.encabezado-prenda h1 span {
+    display: block;
+    margin-top: 8px;
+    color: #d9f1d1;
+    font-size: 0.78em;
+}
+
+.subtitulo-prenda {
+    max-width: 760px;
+    margin: 18px auto 10px;
+    color: rgba(255, 255, 255, 0.94);
+    font-size: 1.18rem;
+    text-align: center;
+}
+
+.frase-header {
+    max-width: 760px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.informacion-header::after {
+    width: 88px;
+    margin: 24px auto 0;
+}
+
+/* Oculta la antigua imagen circular del colegio si quedó en el HTML */
+.encabezado-prenda-contenido>.logo-prenda {
+    display: none;
+}
+
+/* =========================================================
+   HEADER V4 — TABLET Y CELULAR
+   ========================================================= */
+
+@media (max-width: 767px) {
+    .encabezado-prenda {
+        min-height: auto;
+        padding: 18px 0 48px;
+    }
+
+    .marca-colegio {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: calc(100% - 32px);
+        margin: 0 16px 26px;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    .marca-colegio img {
+        width: 48px;
+        height: 48px;
+        padding: 3px;
+    }
+
+    .marca-colegio-texto {
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    .marca-colegio strong {
+        font-size: 0.82rem;
+    }
+
+    .marca-colegio span {
+        font-size: 0.72rem;
+    }
+
+    .encabezado-prenda-contenido {
+        padding: 28px 18px 0;
+    }
+
+    .logo-eco-pass {
+        width: 180px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .encabezado-prenda h1 {
+        margin-top: 0;
+        margin-bottom: 18px;
+        line-height: .88;
+    }
+
+    .encabezado-prenda h1 span {
+        margin-top: 7px;
+    }
+
+    .subtitulo-prenda {
+        margin-top: 26px;
+        font-size: 1rem;
+        line-height: 1.55;
+    }
+
+    .frase-header {
+        font-size: 0.92rem;
+        line-height: 1.55;
+    }
+}
+
+@media (max-width: 420px) {
+    .marca-colegio {
+        width: calc(100% - 24px);
+        margin-right: 12px;
+        margin-left: 12px;
+    }
+
+    .marca-colegio strong {
+        max-width: 180px;
+    }
+
+    .logo-eco-pass {
+        width: 150px;
+        height: auto;
     }
 }
