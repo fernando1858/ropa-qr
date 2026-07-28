@@ -7,12 +7,12 @@
 
     <meta name="description" content="Pasaporte ambiental del polerón institucional del Colegio Inglés de Talca">
 
-    <title>Polerón Institucional | Pasaporte Ambiental</title>
+    <title>Polerón Institucional | ECO-PASS TEXTIL</title>
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>♻️</text></svg>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/estilos.css?v=17">
+    <link rel="stylesheet" href="/css/estilos.css?v=18">
 
 </head>
 
@@ -52,6 +52,10 @@
                     <p class="frase-header">
                         Para transformar el consumo sostenible
                         en la comunidad escolar.
+                    </p>
+
+                    <p class="codigo-prenda">
+                        Eco-Pass ID · EP-POL-001
                     </p>
 
                 </div>
@@ -107,7 +111,8 @@
                             </span>
 
                             <p>
-                                Este ejemplo utiliza datos ficticios para visualizar el resultado final del pasaporte ambiental.
+                                Este ejemplo utiliza datos ficticios para visualizar el resultado final del pasaporte
+                                ambiental.
                             </p>
 
                         </div>
@@ -503,43 +508,39 @@
 
         </section>
 
-        <section class="impacto-final mt-5">
 
-            <p class="impacto-etiqueta">
-                Tu impacto
-            </p>
+        <section class="ecoreto" aria-labelledby="tituloEcoReto">
 
-            <h2 class="impacto-titulo">
-                Reutiliza esta polera antes de comprar una nueva.
-            </h2>
-
-            <div class="impacto-dato">
-
-                <span class="impacto-icono">
-                    💧
-                </span>
-
+            <div class="ecoreto-encabezado">
                 <div>
+                    <p class="ecoreto-etiqueta">Acción sostenible</p>
+                    <h2 id="tituloEcoReto">EcoReto</h2>
+                </div>
 
-                    <p class="impacto-label">
-                        Ahorro aproximado
+                <span class="ecoreto-nivel" id="ecoretoNivel">Fácil</span>
+            </div>
+
+            <div class="ecoreto-contenido">
+
+                <span class="ecoreto-icono" id="ecoretoIcono" aria-hidden="true">🌿</span>
+
+                <div class="ecoreto-textos">
+                    <p class="ecoreto-categoria" id="ecoretoCategoria">Cuidado de la prenda</p>
+                    <h3 id="ecoretoMensaje">Cargando EcoReto...</h3>
+                    <p id="ecoretoDetalle">
+                        Descubre una acción concreta para reducir el impacto de esta prenda.
                     </p>
-
-                    <h3 class="impacto-valor">
-                        2.700 litros de agua
-                    </h3>
-
                 </div>
 
             </div>
 
-            <blockquote class="impacto-reflexion">
-
-                "La prenda más sostenible es aquella que se utiliza durante más tiempo."
-
-            </blockquote>
+            <button class="boton-nuevo-ecoreto" type="button" id="botonNuevoEcoReto">
+                <span aria-hidden="true">↻</span>
+                Otro EcoReto
+            </button>
 
         </section>
+
 
         <section class="cierre-experiencia">
 
@@ -580,9 +581,9 @@
         </div>
 
     </footer>
-    
 
-    
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -655,6 +656,80 @@
 
             desplegable.hide();
         }
+
+
+        const ecoRetos = [
+            {
+                "icono": "🧥",
+                "categoria": "Uso prolongado",
+                "nivel": "Fácil",
+                "reto": "Usa este polerón una temporada más antes de reemplazarlo.",
+                "detalle": "Prolongar su vida útil reduce la necesidad de fabricar una prenda nueva."
+            },
+            {
+                "icono": "🧼",
+                "categoria": "Cuidado",
+                "nivel": "Fácil",
+                "reto": "Lava el polerón solo cuando realmente lo necesite.",
+                "detalle": "Reducir los lavados ayuda a ahorrar agua y conserva mejor sus fibras."
+            },
+            {
+                "icono": "🌬️",
+                "categoria": "Secado",
+                "nivel": "Fácil",
+                "reto": "Déjalo secar al aire libre en lugar de usar secadora.",
+                "detalle": "El secado natural reduce el consumo de energía y el desgaste del tejido."
+            },
+            {
+                "icono": "🪡",
+                "categoria": "Reparación",
+                "nivel": "Medio",
+                "reto": "Repara el cierre, puño o costura antes de descartarlo.",
+                "detalle": "Una reparación pequeña puede extender considerablemente su tiempo de uso."
+            },
+            {
+                "icono": "🤝",
+                "categoria": "Reutilización",
+                "nivel": "Medio",
+                "reto": "Entrégalo a otro estudiante si ya no te queda.",
+                "detalle": "Compartir el uniforme mantiene la prenda en circulación dentro de la comunidad."
+            }
+        ];
+
+        let indiceEcoRetoActual = -1;
+
+        function obtenerIndiceEcoReto() {
+            if (ecoRetos.length <= 1) {
+                return 0;
+            }
+
+            let nuevoIndice;
+
+            do {
+                nuevoIndice = Math.floor(Math.random() * ecoRetos.length);
+            } while (nuevoIndice === indiceEcoRetoActual);
+
+            return nuevoIndice;
+        }
+
+        function mostrarEcoReto() {
+            indiceEcoRetoActual = obtenerIndiceEcoReto();
+            const reto = ecoRetos[indiceEcoRetoActual];
+
+            document.getElementById("ecoretoIcono").textContent = reto.icono;
+            document.getElementById("ecoretoCategoria").textContent = reto.categoria;
+            document.getElementById("ecoretoMensaje").textContent = reto.reto;
+            document.getElementById("ecoretoDetalle").textContent = reto.detalle;
+            document.getElementById("ecoretoNivel").textContent = reto.nivel;
+        }
+
+        document.getElementById("botonNuevoEcoReto")
+            .addEventListener("click", mostrarEcoReto);
+
+        mostrarEcoReto();
+
     </script>
 
 </body>
+
+</html>
