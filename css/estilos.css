@@ -1742,3 +1742,408 @@ p {
         height: auto;
     }
 }
+
+/* =========================================================
+   ECOSCORE V2 — TEMAS DINÁMICOS POR NIVEL
+   ========================================================= */
+
+.resultado-principal-ecoscore {
+    --nivel-principal: #26734d;
+    --nivel-oscuro: #174d36;
+    --nivel-borde: #bcdcc8;
+    --nivel-fondo-1: #edf9f1;
+    --nivel-fondo-2: #dff2e6;
+    --nivel-marca: rgba(38, 115, 77, 0.07);
+
+    position: relative;
+    overflow: hidden;
+    padding: 34px;
+    border: 1px solid var(--nivel-borde);
+    border-radius: 22px;
+    background:
+        linear-gradient(145deg,
+            var(--nivel-fondo-1),
+            var(--nivel-fondo-2));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.resultado-principal-ecoscore::after {
+    content: "ECO";
+    position: absolute;
+    right: 24px;
+    bottom: 2px;
+    color: var(--nivel-marca);
+    font-size: clamp(4rem, 11vw, 8rem);
+    font-weight: 900;
+    letter-spacing: -0.06em;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.ecoscore-resumen {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.ecoscore-puntaje {
+    min-width: 0;
+}
+
+.texto-puntaje {
+    color: var(--nivel-principal);
+}
+
+.numero-ecoscore {
+    color: var(--nivel-oscuro);
+    font-size: clamp(3.7rem, 8vw, 6rem);
+    line-height: 0.95;
+}
+
+.numero-ecoscore small {
+    font-size: 0.46em;
+    font-weight: 800;
+    opacity: 0.72;
+}
+
+.estrellas-principales {
+    margin: 14px 0 0;
+    color: var(--nivel-principal);
+    font-size: 1.75rem;
+}
+
+.sello-nivel-ecoscore {
+    min-width: 165px;
+    padding: 15px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid color-mix(in srgb, var(--nivel-principal) 28%, transparent);
+    border-radius: 18px;
+    color: var(--nivel-oscuro);
+    background-color: rgba(255, 255, 255, 0.58);
+    backdrop-filter: blur(4px);
+}
+
+.sello-nivel-icono {
+    flex-shrink: 0;
+    color: var(--nivel-principal);
+    font-size: 1.7rem;
+    line-height: 1;
+}
+
+.sello-nivel-texto {
+    display: flex;
+    flex-direction: column;
+    color: var(--gris-texto);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    line-height: 1.35;
+    text-transform: uppercase;
+}
+
+.sello-nivel-texto strong {
+    color: var(--nivel-oscuro);
+    font-size: 1.05rem;
+}
+
+.barra-ecoscore {
+    position: relative;
+    z-index: 1;
+    height: 13px;
+    margin-top: 28px;
+    overflow: hidden;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.78);
+    box-shadow: inset 0 1px 3px rgba(32, 49, 41, 0.11);
+}
+
+.barra-ecoscore-progreso {
+    height: 100%;
+    border-radius: inherit;
+    background:
+        linear-gradient(90deg,
+            color-mix(in srgb, var(--nivel-principal) 72%, white),
+            var(--nivel-principal));
+    box-shadow: 0 0 14px color-mix(in srgb, var(--nivel-principal) 28%, transparent);
+}
+
+.barra-ecoscore-etiquetas {
+    position: relative;
+    z-index: 1;
+    margin-top: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--gris-texto);
+    font-size: 0.75rem;
+}
+
+.barra-ecoscore-etiquetas strong {
+    color: var(--nivel-oscuro);
+    font-size: 0.84rem;
+}
+
+.resultado-principal-ecoscore .nombre-nivel {
+    position: relative;
+    z-index: 1;
+    margin-top: 22px;
+    color: var(--nivel-oscuro);
+    font-size: 1.35rem;
+}
+
+.resultado-principal-ecoscore .descripcion-nivel {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+}
+
+.ecoscore-indicadores {
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ecoscore-indicadores span {
+    padding: 8px 12px;
+    border: 1px solid color-mix(in srgb, var(--nivel-principal) 17%, transparent);
+    border-radius: 999px;
+    color: var(--nivel-oscuro);
+    background-color: rgba(255, 255, 255, 0.62);
+    font-size: 0.79rem;
+    font-weight: 800;
+}
+
+/* Nivel Platino */
+.nivel-resultado-platino {
+    --nivel-principal: #758897;
+    --nivel-oscuro: #455866;
+    --nivel-borde: #b8c4ce;
+    --nivel-fondo-1: #fbfcfd;
+    --nivel-fondo-2: #e5ebf0;
+    --nivel-marca: rgba(91, 110, 124, 0.08);
+}
+
+.nivel-resultado-platino .estrellas-principales {
+    color: #b49a55;
+}
+
+.nivel-resultado-platino .sello-nivel-icono {
+    color: #a78d4d;
+}
+
+/* Nivel Verde */
+.nivel-resultado-verde {
+    --nivel-principal: #2d8b59;
+    --nivel-oscuro: #155d3a;
+    --nivel-borde: #9ecfb0;
+    --nivel-fondo-1: #edf9f1;
+    --nivel-fondo-2: #d9efdf;
+    --nivel-marca: rgba(45, 139, 89, 0.08);
+}
+
+/* Nivel Amarillo */
+.nivel-resultado-amarillo {
+    --nivel-principal: #c49a16;
+    --nivel-oscuro: #705604;
+    --nivel-borde: #e5ce70;
+    --nivel-fondo-1: #fffdf1;
+    --nivel-fondo-2: #fff0ae;
+    --nivel-marca: rgba(196, 154, 22, 0.09);
+}
+
+/* Nivel Naranja */
+.nivel-resultado-naranja {
+    --nivel-principal: #d97824;
+    --nivel-oscuro: #84400b;
+    --nivel-borde: #eeb173;
+    --nivel-fondo-1: #fff8f1;
+    --nivel-fondo-2: #ffdcb8;
+    --nivel-marca: rgba(217, 120, 36, 0.09);
+}
+
+/* Nivel Rojo */
+.nivel-resultado-rojo {
+    --nivel-principal: #c84747;
+    --nivel-oscuro: #812626;
+    --nivel-borde: #e1a0a0;
+    --nivel-fondo-1: #fff6f6;
+    --nivel-fondo-2: #ffd7d7;
+    --nivel-marca: rgba(200, 71, 71, 0.09);
+}
+
+/* El certificado completo acompaña el color del resultado */
+.ecoscore-certificado:has(.nivel-resultado-platino) {
+    border-top-color: #8294a2;
+}
+
+.ecoscore-certificado:has(.nivel-resultado-verde) {
+    border-top-color: #2d8b59;
+}
+
+.ecoscore-certificado:has(.nivel-resultado-amarillo) {
+    border-top-color: #c49a16;
+}
+
+.ecoscore-certificado:has(.nivel-resultado-naranja) {
+    border-top-color: #d97824;
+}
+
+.ecoscore-certificado:has(.nivel-resultado-rojo) {
+    border-top-color: #c84747;
+}
+
+@media (max-width: 767px) {
+    .resultado-principal-ecoscore {
+        padding: 23px;
+    }
+
+    .ecoscore-resumen {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .sello-nivel-ecoscore {
+        min-width: 0;
+        align-self: stretch;
+    }
+
+    .numero-ecoscore {
+        font-size: 3.7rem;
+    }
+
+    .estrellas-principales {
+        font-size: 1.45rem;
+        letter-spacing: 2px;
+    }
+
+    .resultado-principal-ecoscore::after {
+        right: 10px;
+        bottom: 10px;
+        font-size: 4.4rem;
+    }
+
+    .ecoscore-indicadores {
+        gap: 8px;
+    }
+
+    .ecoscore-indicadores span {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* =========================================================
+   HERO ORGÁNICO — COMPOSICIÓN LIMPIA
+   ========================================================= */
+
+.encabezado-prenda {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 82% 18%,
+            rgba(255, 255, 255, .08),
+            transparent 30%),
+        radial-gradient(circle at 92% 88%,
+            rgba(138, 191, 90, .16),
+            transparent 26%),
+        linear-gradient(135deg,
+            #145a3d 0%,
+            #26734d 48%,
+            #4c9b71 100%);
+}
+
+.encabezado-prenda::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 420'%3E%3Cg fill='none' stroke='%23b9dc9f' stroke-width='2.3' opacity='.17'%3E%3Cpath d='M42 390C44 252 93 149 194 72'/%3E%3Cpath d='M45 349C89 321 121 281 145 230'/%3E%3Cpath d='M49 309C90 283 116 249 138 207'/%3E%3Cpath d='M56 267C91 246 114 218 131 185'/%3E%3Cpath d='M70 224C98 207 116 185 128 158'/%3E%3Cpath d='M42 390C-14 288 8 167 119 79C164 43 216 26 245 31C237 84 207 142 167 194C129 245 85 292 42 390Z'/%3E%3C/g%3E%3C/svg%3E"),
+
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 260'%3E%3Cg fill='none' stroke='%23d9efc8' stroke-width='2' opacity='.15'%3E%3Cpath d='M20 220C88 171 147 106 214 30'/%3E%3Cpath d='M82 175C111 164 138 145 161 120'/%3E%3Cpath d='M112 144C136 135 157 118 175 98'/%3E%3Cpath d='M20 220C5 157 29 89 101 45C145 18 204 12 282 31C254 86 208 136 151 174C108 203 63 216 20 220Z'/%3E%3C/g%3E%3C/svg%3E"),
+
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 130 130'%3E%3Cg fill='%23d7efc3' opacity='.14'%3E%3Ccircle cx='15' cy='15' r='3'/%3E%3Ccircle cx='40' cy='15' r='3'/%3E%3Ccircle cx='65' cy='15' r='3'/%3E%3Ccircle cx='90' cy='15' r='3'/%3E%3Ccircle cx='15' cy='40' r='3'/%3E%3Ccircle cx='40' cy='40' r='3'/%3E%3Ccircle cx='65' cy='40' r='3'/%3E%3Ccircle cx='90' cy='40' r='3'/%3E%3Ccircle cx='15' cy='65' r='3'/%3E%3Ccircle cx='40' cy='65' r='3'/%3E%3Ccircle cx='65' cy='65' r='3'/%3E%3Ccircle cx='90' cy='65' r='3'/%3E%3C/g%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+
+    background-position:
+        left -55px bottom -120px,
+        right -70px bottom -55px,
+        right 10% top 22%;
+
+    background-size:
+        250px auto,
+        350px auto,
+        110px auto;
+}
+
+.encabezado-prenda::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    pointer-events: none;
+
+    background:
+        radial-gradient(ellipse at 8% 5%,
+            rgba(8, 69, 47, .20) 0 19%,
+            transparent 19.5%),
+        radial-gradient(ellipse at 78% 0%,
+            rgba(255, 255, 255, .055) 0 24%,
+            transparent 24.5%),
+        radial-gradient(ellipse at 105% 92%,
+            rgba(138, 191, 90, .11) 0 21%,
+            transparent 21.5%);
+}
+
+.encabezado-prenda .container::before {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .encabezado-prenda::before {
+        background-position:
+            left -90px bottom -110px,
+            right -130px bottom -75px,
+            right -20px top 32%;
+
+        background-size:
+            210px auto,
+            270px auto,
+            85px auto;
+    }
+}
+
+/* Ajustes móviles: menos elementos para evitar saturación */
+@media (max-width: 767px) {
+    .encabezado-prenda::after {
+        opacity: 0.72;
+        background-position:
+            left -92px bottom -88px,
+            right -125px bottom -70px,
+            right -18px top 34%;
+        background-size:
+            235px auto,
+            290px auto,
+            105px auto;
+    }
+
+    .encabezado-prenda .container::before {
+        top: 88px;
+        right: 18px;
+        width: 30px;
+        height: 48px;
+        opacity: 0.13;
+    }
+}
