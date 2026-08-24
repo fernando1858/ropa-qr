@@ -1,145 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pantalón Raindoor | EcoPass</title>
-    <link rel="stylesheet" href="/css/estilos.css">
-    <link rel="stylesheet" href="/css/eco-score.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pasaporte Ambiental de Pantalón Raindoor — Colegio Inglés de Talca">
+<title>Pantalón Raindoor | Pasaporte Ambiental</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css?v=2">
+
+    <style>
+        .eco-score-verde .ecoscore-certificado{border-top-color:#2d9b5f;}
+        .eco-score-verde .resultado-principal-ecoscore{border-color:#c9e2d3;background-color:#edf8f1;}
+        .eco-score-verde .texto-puntaje,.eco-score-verde .nombre-nivel{color:#2d9b5f;}
+        .eco-score-verde .numero-ecoscore{color:#2d9b5f;}
+        .eco-score-verde .estrellas-principales{color:#2d9b5f;}
+        .eco-score-verde .ecoreto-nivel{color:#2d9b5f;background-color:#edf8f1;}
+        .eco-score-verde .ecoreto{border-color:#c9e2d3;background:linear-gradient(145deg,#fff,#edf8f1);}
+        .eco-score-verde .ecoreto-contenido{border-left-color:#2d9b5f;}
+        .eco-score-verde .ecoreto-icono{background-color:#edf8f1;}
+        .eco-score-verde .ecoreto-categoria{color:#2d9b5f;}
+    </style>
+    
 </head>
-
 <body class="eco-score-verde">
-    <main class="container">
-        <header class="encabezado-prenda">
-            <div class="marca-colegio">
-                <div class="logo-colegio-placeholder">LOGO<br>COLEGIO</div>
-                <strong>Nombre del colegio</strong>
-            </div>
+<header class="encabezado-prenda">
+  <div class="container">
+    <div class="marca-colegio">
+      <img src="imagenes/logo-colegio.png" alt="Logo del Colegio Inglés de Talca">
+      <div class="marca-colegio-texto">
+        <strong>Colegio Inglés de Talca</strong>
+        <span>Pasaporte Ambiental</span>
+      </div>
+    </div>
+    <div class="encabezado-prenda-contenido">
+      <img src="imagenes/logo-eco-pass.png" alt="EcoPass" class="logo-eco-pass">
+      <div class="informacion-header">
+        <p class="frase-header">Conoce el impacto ambiental de tu prenda.</p>
+        <h1>Pantalón Raindoor</h1>
+        <p class="subtitulo-prenda">👖 Pantalón</p>
+        <span class="codigo-prenda">EcoPass · Pantalón</span>
+      </div>
+    </div>
+  </div>
+</header>
 
-            <div class="encabezado-prenda-contenido">
-                <img src="logo-eco-pass.png" alt="EcoPass" class="logo-eco-pass">
-                <p class="frase-header">Conoce el impacto ambiental de tu prenda.</p>
-                <h1>Pantalón Raindoor</h1>
-                <p class="subtitulo-prenda">Pantalón</p>
-            </div>
-        </header>
+<main>
+<section class="seccion-datos-ambientales">
+  <div class="container">
+    <div class="encabezado-datos">
+      <p class="titulo-pequeno">Información de la prenda</p>
+      <h2>Conoce su huella ambiental</h2>
+      <p>Estos datos forman parte del Pasaporte Ambiental de esta prenda.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-3">
+        <article class="tarjeta-info tarjeta-textil">
+          <div class="cabecera-tarjeta"><div class="icono">🧵</div><h3>Composición textil</h3></div>
+          <p>98% algodón + 2% spandex</p><small class="d-block mt-2 text-secondary">Masa: 243 g</small>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <article class="tarjeta-info tarjeta-agua">
+          <div class="cabecera-tarjeta"><div class="icono">💧</div><h3>Huella hídrica</h3></div>
+          <p>2.680 L</p><small class="d-block mt-2 text-secondary">Agua estimada asociada a la prenda.</small>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <article class="tarjeta-info tarjeta-carbono">
+          <div class="cabecera-tarjeta"><div class="icono">🌍</div><h3>Huella de carbono</h3></div>
+          <p>4,91 kg CO₂e</p><small class="d-block mt-2 text-secondary">Emisiones estimadas.</small>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <article class="tarjeta-info tarjeta-durabilidad">
+          <div class="cabecera-tarjeta"><div class="icono">🛡️</div><h3>Durabilidad</h3></div>
+          <p>2,95 años</p><small class="d-block mt-2 text-secondary">Vida útil estimada.</small>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-6">
+        <article class="tarjeta-info tarjeta-degradacion">
+          <div class="cabecera-tarjeta"><div class="icono">⏳</div><h3>Degradación</h3></div>
+          <p>Predomina algodón; el spandex dificulta la degradación</p>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-6">
+        <article class="tarjeta-info tarjeta-circularidad">
+          <div class="cabecera-tarjeta"><div class="icono">♻️</div><h3>Circularidad</h3></div>
+          <p>Reparar → segunda mano → transformar en short → bolso → estuche → retazos textiles</p>
+        </article>
+      </div>
+    </div>
 
-        <section class="pasaporte-card">
-            <div class="pasaporte-header">
-                <span>🌱 PASAPORTE ECOLÓGICO</span>
-                <span class="estado-pendiente">Información en desarrollo</span>
-            </div>
+    <div class="mt-5">
+      <article class="ecoscore-certificado">
+        <div class="encabezado-ecoscore">
+          <div>
+            <p class="titulo-pequeno">Evaluación ambiental</p>
+            <h2>EcoScore de la prenda</h2>
+            <p class="mb-0 text-secondary">Una evaluación sencilla para comunicar su nivel de impacto ambiental.</p>
+          </div>
+          <span class="estado-evaluacion">Evaluado</span>
+        </div>
+        <div class="resultado-principal-ecoscore">
+          <span class="texto-puntaje">EcoScore</span>
+          <span class="numero-ecoscore">82/100</span>
+          <div class="estrellas-principales" aria-label="82 de 100">★★★★☆</div>
+          <p class="nombre-nivel">VERDE</p>
+          <p class="descripcion-nivel mb-0">Esta prenda pertenece al nivel <strong>VERDE</strong> según su EcoScore.</p>
+        </div>
+      </article>
+    </div>
 
-            <div class="datos-prenda">
-                <article class="dato-card">
-                    <div class="dato-icono">🧵</div>
-                    <div>
-                        <span class="dato-label">COMPOSICIÓN</span>
-                        <strong>98% algodón, 2% spandex</strong>
-                    </div>
-                </article>
+    <section class="ecoreto">
+      <div class="ecoreto-encabezado">
+        <div>
+          <p class="ecoreto-etiqueta">♻️ Pasaporte Ambiental</p>
+          <h2>EcoReto</h2>
+        </div>
+        <span class="ecoreto-nivel">Medio</span>
+      </div>
+      <div class="ecoreto-contenido">
+        <div class="ecoreto-icono">👖</div>
+        <div class="ecoreto-textos">
+          <p class="ecoreto-categoria">Cuidado</p>
+          <h3>Revisa el pantalón antes de pensar en reemplazarlo.</h3>
+          <p>Detectar y reparar pequeños daños puede ayudar a prolongar su vida útil.</p>
+        </div>
+      </div>
+    </section>
 
-                <article class="dato-card">
-                    <div class="dato-icono">💧</div>
-                    <div>
-                        <span class="dato-label">HUELLA HÍDRICA</span>
-                        <strong>2.394,5 L</strong>
-                        <small>litros de agua</small>
-                    </div>
-                </article>
+    <section class="impacto-final">
+      <p class="impacto-etiqueta">Un dato para recordar</p>
+      <h2 class="impacto-titulo">Cada decisión sobre una prenda también es una decisión sobre sus recursos.</h2>
+      <div class="impacto-dato">
+        <div class="impacto-icono">👖</div>
+        <div>
+          <p class="impacto-label">Desafío ambiental</p>
+          <p class="impacto-valor">¡Dale otra vuelta! Reutilizarlo evita una nueva demanda estimada de 2.680 L de agua.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+</main>
 
-                <article class="dato-card">
-                    <div class="dato-icono">🌎</div>
-                    <div>
-                        <span class="dato-label">HUELLA DE CARBONO</span>
-                        <strong>5,11 kg</strong>
-                        <small>kg CO₂</small>
-                    </div>
-                </article>
-            </div>
-
-
-            <section class="eco-score eco-score-real">
-                <div>
-                    <span class="dato-label">ECOSCORE</span>
-                    <h2>82 / 100</h2>
-                    <span class="score-nivel">VERDE</span>
-                    <p>Clasificación ambiental según la evaluación del pasaporte.</p>
-                </div>
-                <div class="score-valor" aria-label="EcoScore 82 de 100">82</div>
-            </section>
-
-            <section class="eco-reto">
-                <div class="eco-reto-titulo">
-                    <span>♻️ ECO RETO</span>
-                    <button type="button" id="nuevoReto">Nuevo reto</button>
-                </div>
-
-                <div id="retoContenido" class="reto-contenido"></div>
-            </section>
-
-
-            <section class="info-real">
-                <h3>Información ambiental</h3>
-                <div class="info-real-grid">
-                    <article class="info-real-item">
-                        <strong>⏳ Degradación aproximada</strong>
-                        <p>Predomina algodón; el spandex dificulta la degradación</p>
-                    </article>
-                    <article class="info-real-item">
-                        <strong>🛡️ Índice de vida extendida</strong>
-                        <p>2,95 años</p>
-                    </article>
-                    <article class="info-real-item">
-                        <strong>♻️ Circularidad</strong>
-                        <p>Reparar → segunda mano → transformar en short → bolso → estuche → retazos textiles</p>
-                    </article>
-                </div>
-                <div class="mensaje-desafio">
-                    <strong>👖 Desafío ambiental</strong>
-                    <p>¡Dale otra vuelta! Reutilizarlo evita una nueva demanda estimada de 2.680 L de agua.</p>
-                </div>
-            </section>
-
-            <footer class="cierre-pasaporte">
-                <strong>Cuidar una prenda también es cuidar sus recursos.</strong>
-                <p>EcoPass · Pasaporte ecológico textil</p>
-            </footer>
-        </section>
-    </main>
-
-    <script>
-        const retos = [
-            { icono: '🧵', categoria: 'Cuidado', nivel: 'Medio', reto: 'Revisa el pantalón antes de pensar en reemplazarlo.', detalle: 'Detectar y reparar pequeños daños puede ayudar a prolongar su vida útil.' },
-            { icono: '🧺', categoria: 'Uso responsable', nivel: 'Medio', reto: 'Lávalo solo cuando sea necesario.', detalle: 'Reducir lavados innecesarios ayuda a cuidar la prenda y sus recursos.' },
-            { icono: '♻️', categoria: 'Reutilización', nivel: 'Medio', reto: 'Piensa en una forma creativa de reutilizarlo cuando termine su uso habitual.', detalle: 'Transformar una prenda mantiene sus materiales en circulación.' }
-        ];
-
-        let ultimoReto = -1;
-
-        function mostrarReto() {
-            let indice;
-            do {
-                indice = Math.floor(Math.random() * retos.length);
-            } while (retos.length > 1 && indice === ultimoReto);
-
-            ultimoReto = indice;
-            const reto = retos[indice];
-
-            document.getElementById("retoContenido").innerHTML = `
-                <div class="reto-icono">${reto.icono}</div>
-                <div class="reto-texto">
-                    <span class="reto-categoria">${reto.categoria} · ${reto.nivel}</span>
-                    <h3>${reto.reto}</h3>
-                    <p>${reto.detalle}</p>
-                </div>
-            `;
-        }
-
-        document.getElementById("nuevoReto").addEventListener("click", mostrarReto);
-        mostrarReto();
-    </script>
+<footer class="pie-pagina">
+  <div class="container">
+    <div class="contenido-footer">
+      <img src="imagenes/logo-colegio.png" alt="Logo del Colegio Inglés de Talca" class="logo-footer">
+      <div>
+        <p class="nombre-colegio-footer">Colegio Inglés de Talca</p>
+        <p class="mb-0">Pasaporte Ambiental de Prendas</p>
+      </div>
+    </div>
+    <div class="linea-footer"></div>
+    <p class="mensaje-footer">Proyecto de conciencia ambiental, economía circular y consumo responsable.</p>
+  </div>
+</footer>
 </body>
-
 </html>
