@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blusa blanca | EcoPass</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="eco-score.css">
+</head>
+<body class="eco-score-verde">
+    <main class="container">
+        <header class="encabezado-prenda">
+            <div class="marca-colegio">
+                <div class="logo-colegio-placeholder">LOGO<br>COLEGIO</div>
+                <strong>Nombre del colegio</strong>
+            </div>
+
+            <div class="encabezado-prenda-contenido">
+                <img src="logo-eco-pass.png" alt="EcoPass" class="logo-eco-pass">
+                <p class="frase-header">Conoce el impacto ambiental de tu prenda.</p>
+                <h1>Blusa blanca</h1>
+                <p class="subtitulo-prenda">Blusa</p>
+            </div>
+        </header>
+
+        <section class="pasaporte-card">
+            <div class="pasaporte-header">
+                <span>🌱 PASAPORTE ECOLÓGICO</span>
+                <span class="estado-pendiente">Información en desarrollo</span>
+            </div>
+
+            <div class="datos-prenda">
+                <article class="dato-card">
+                    <div class="dato-icono">🧵</div>
+                    <div>
+                        <span class="dato-label">COMPOSICIÓN</span>
+                        <strong>100% algodón</strong>
+                    </div>
+                </article>
+
+                <article class="dato-card">
+                    <div class="dato-icono">💧</div>
+                    <div>
+                        <span class="dato-label">HUELLA HÍDRICA</span>
+                        <strong>1.700 L</strong>
+                        <small>litros de agua</small>
+                    </div>
+                </article>
+
+                <article class="dato-card">
+                    <div class="dato-icono">🌎</div>
+                    <div>
+                        <span class="dato-label">HUELLA DE CARBONO</span>
+                        <strong>278,8 kg</strong>
+                        <small>kg CO₂</small>
+                    </div>
+                </article>
+            </div>
+
+            
+            <section class="eco-score eco-score-real">
+                <div>
+                    <span class="dato-label">ECOSCORE</span>
+                    <h2>89 / 100</h2>
+                    <span class="score-nivel">VERDE</span>
+                    <p>Clasificación ambiental según la evaluación del pasaporte.</p>
+                </div>
+                <div class="score-valor" aria-label="EcoScore 89 de 100">89</div>
+            </section>
+
+            <section class="eco-reto">
+                <div class="eco-reto-titulo">
+                    <span>♻️ ECO RETO</span>
+                    <button type="button" id="nuevoReto">Nuevo reto</button>
+                </div>
+
+                <div id="retoContenido" class="reto-contenido"></div>
+            </section>
+
+            
+            <section class="info-real">
+                <h3>Información ambiental</h3>
+                <div class="info-real-grid">
+                    <article class="info-real-item">
+                        <strong>⏳ Degradación aproximada</strong>
+                        <p>Hasta ~5 meses en condiciones favorables</p>
+                    </article>
+                    <article class="info-real-item">
+                        <strong>🛡️ Índice de vida extendida</strong>
+                        <p>2,95 años</p>
+                    </article>
+                    <article class="info-real-item">
+                        <strong>♻️ Circularidad</strong>
+                        <p>Reutilizar → segunda mano → pijama → bolsa reutilizable → paño textil → reciclaje</p>
+                    </article>
+                </div>
+                <div class="mensaje-desafio">
+                    <strong>👚 Desafío ambiental</strong>
+                    <p>¿Le das una segunda vida? Puedes evitar una nueva demanda estimada de 1.700 L de agua.</p>
+                </div>
+            </section>
+
+            <footer class="cierre-pasaporte">
+                <strong>Cuidar una prenda también es cuidar sus recursos.</strong>
+                <p>EcoPass · Pasaporte ecológico textil</p>
+            </footer>
+        </section>
+    </main>
+
+    <script>
+        const retos = [
+            { icono: '🧵', categoria: 'Cuidado', nivel: 'Fácil', reto: 'Revisa que la blusa esté en buenas condiciones antes de reemplazarla.', detalle: 'Cuidar una prenda permite extender su vida útil.' },
+{ icono: '🧺', categoria: 'Uso responsable', nivel: 'Fácil', reto: 'Evita lavar la blusa si todavía está limpia y puede volver a utilizarse.', detalle: 'Menos lavados innecesarios ayudan a conservar la prenda.' },
+{ icono: '♻️', categoria: 'Reutilización', nivel: 'Medio', reto: 'Piensa en un segundo uso para esta blusa cuando termine su uso habitual.', detalle: 'Reutilizar evita que los materiales se conviertan rápidamente en residuos.' }
+        ];
+
+        let ultimoReto = -1;
+
+        function mostrarReto() {
+            let indice;
+            do {
+                indice = Math.floor(Math.random() * retos.length);
+            } while (retos.length > 1 && indice === ultimoReto);
+
+            ultimoReto = indice;
+            const reto = retos[indice];
+
+            document.getElementById("retoContenido").innerHTML = `
+                <div class="reto-icono">${reto.icono}</div>
+                <div class="reto-texto">
+                    <span class="reto-categoria">${reto.categoria} · ${reto.nivel}</span>
+                    <h3>${reto.reto}</h3>
+                    <p>${reto.detalle}</p>
+                </div>
+            `;
+        }
+
+        document.getElementById("nuevoReto").addEventListener("click", mostrarReto);
+        mostrarReto();
+    </script>
+</body>
+</html>
