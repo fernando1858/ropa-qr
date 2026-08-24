@@ -2367,14 +2367,15 @@ body.eco-score-verde .encabezado-prenda {
 /* AMARILLO */
 body.eco-score-amarillo .encabezado-prenda {
     background: linear-gradient(135deg,
-            #fff200 0%,
-            /* amarillo intenso */
-            #ffeb3b 55%,
-            /* amarillo estándar */
-            #fff176 100%
+            #f9e65c 0%,
+            /* amarillo suave */
+            #fff176 55%,
             /* amarillo claro */
+            #fff59d 100%
+            /* amarillo pastel */
         );
 }
+
 
 
 /* NARANJA */
