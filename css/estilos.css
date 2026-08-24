@@ -2366,12 +2366,16 @@ body.eco-score-verde .encabezado-prenda {
 
 /* AMARILLO */
 body.eco-score-amarillo .encabezado-prenda {
-    background:
-        linear-gradient(135deg,
-            #c9a900 0%,
-            #e5c21f 55%,
-            #f2d94e 100%);
+    background: linear-gradient(135deg,
+            #fff200 0%,
+            /* amarillo intenso */
+            #ffeb3b 55%,
+            /* amarillo estándar */
+            #fff176 100%
+            /* amarillo claro */
+        );
 }
+
 
 /* NARANJA */
 body.eco-score-naranja .encabezado-prenda {
