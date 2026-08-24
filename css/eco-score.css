@@ -1,0 +1,113 @@
+/* ECO-PASS — colores oficiales según EcoScore */
+body.eco-score-verde { --eco-score-color:#2f8a57; --eco-score-soft:#e8f5ed; --eco-score-border:#b9ddc6; }
+body.eco-score-amarillo { --eco-score-color:#c99516; --eco-score-soft:#fff7dc; --eco-score-border:#ead79a; }
+body.eco-score-naranja { --eco-score-color:#df7b18; --eco-score-soft:#fff0df; --eco-score-border:#efc49b; }
+body.eco-score-rojo { --eco-score-color:#c84b45; --eco-score-soft:#fdebea; --eco-score-border:#e5b0ad; }
+
+body[class*="eco-score-"] {
+    background: linear-gradient(180deg, var(--eco-score-soft) 0%, #ffffff 34%, #ffffff 100%);
+}
+
+body[class*="eco-score-"] .eco-score {
+    border-color: var(--eco-score-border);
+    background: var(--eco-score-soft);
+    color: var(--eco-score-color);
+}
+
+body[class*="eco-score-"] .eco-score h2,
+body[class*="eco-score-"] .eco-score .dato-label {
+    color: var(--eco-score-color);
+}
+
+body[class*="eco-score-"] .score-valor,
+body[class*="eco-score-"] .score-pendiente {
+    color: var(--eco-score-color);
+    background: #fff;
+    border-color: var(--eco-score-border);
+}
+
+.eco-score-real {
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.eco-score-real .score-valor {
+    min-width:82px;
+    min-height:82px;
+    display:grid;
+    place-items:center;
+    border:3px solid var(--eco-score-color);
+    border-radius:24px;
+    font-size:2rem;
+    font-weight:950;
+}
+
+.eco-score-real .score-nivel {
+    display:inline-block;
+    margin-top:6px;
+    color:var(--eco-score-color);
+    font-weight:900;
+    letter-spacing:.08em;
+}
+
+.datos-prenda .dato-card .dato-extra {
+    display:block;
+    margin-top:4px;
+    color:#6b776f;
+    font-size:.78rem;
+}
+
+.info-real {
+    margin-top:24px;
+    padding:24px;
+    border:1px solid var(--eco-score-border);
+    border-radius:20px;
+    background:#fff;
+}
+
+.info-real h3 {
+    margin:0 0 16px;
+    color:#234f39;
+}
+
+.info-real-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.info-real-item {
+    padding:16px;
+    border-radius:15px;
+    background:#f7faf8;
+}
+
+.info-real-item strong {
+    display:block;
+    margin-bottom:6px;
+    color:#234f39;
+}
+
+.info-real-item p {
+    margin:0;
+    color:#536159;
+    line-height:1.55;
+}
+
+.mensaje-desafio {
+    margin-top:20px;
+    padding:20px;
+    border-radius:18px;
+    background:var(--eco-score-soft);
+    border:1px solid var(--eco-score-border);
+}
+
+.mensaje-desafio strong { color:var(--eco-score-color); }
+.mensaje-desafio p { margin:8px 0 0; line-height:1.55; }
+
+@media (max-width:650px) {
+    .eco-score-real { align-items:flex-start; }
+    .eco-score-real .score-valor { min-width:68px; min-height:68px; font-size:1.6rem; }
+    .info-real-grid { grid-template-columns:1fr; }
+}

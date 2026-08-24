@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pantalón Raindoor | EcoPass</title>
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="eco-score.css">
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="/css/eco-score.css">
 </head>
+
 <body class="eco-score-verde">
     <main class="container">
         <header class="encabezado-prenda">
@@ -57,7 +59,7 @@
                 </article>
             </div>
 
-            
+
             <section class="eco-score eco-score-real">
                 <div>
                     <span class="dato-label">ECOSCORE</span>
@@ -77,7 +79,7 @@
                 <div id="retoContenido" class="reto-contenido"></div>
             </section>
 
-            
+
             <section class="info-real">
                 <h3>Información ambiental</h3>
                 <div class="info-real-grid">
@@ -110,8 +112,8 @@
     <script>
         const retos = [
             { icono: '🧵', categoria: 'Cuidado', nivel: 'Medio', reto: 'Revisa el pantalón antes de pensar en reemplazarlo.', detalle: 'Detectar y reparar pequeños daños puede ayudar a prolongar su vida útil.' },
-{ icono: '🧺', categoria: 'Uso responsable', nivel: 'Medio', reto: 'Lávalo solo cuando sea necesario.', detalle: 'Reducir lavados innecesarios ayuda a cuidar la prenda y sus recursos.' },
-{ icono: '♻️', categoria: 'Reutilización', nivel: 'Medio', reto: 'Piensa en una forma creativa de reutilizarlo cuando termine su uso habitual.', detalle: 'Transformar una prenda mantiene sus materiales en circulación.' }
+            { icono: '🧺', categoria: 'Uso responsable', nivel: 'Medio', reto: 'Lávalo solo cuando sea necesario.', detalle: 'Reducir lavados innecesarios ayuda a cuidar la prenda y sus recursos.' },
+            { icono: '♻️', categoria: 'Reutilización', nivel: 'Medio', reto: 'Piensa en una forma creativa de reutilizarlo cuando termine su uso habitual.', detalle: 'Transformar una prenda mantiene sus materiales en circulación.' }
         ];
 
         let ultimoReto = -1;
@@ -139,4 +141,5 @@
         mostrarReto();
     </script>
 </body>
+
 </html>
